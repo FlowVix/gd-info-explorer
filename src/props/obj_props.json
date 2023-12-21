@@ -1,0 +1,544 @@
+{
+    "$AREA TRIGGER COMMON": {
+        "length": ["int", 222, "10 units = 1 grid"],
+        "length +-": ["int", 223, "10 units = 1 grid"],
+
+        "offset": ["int", 220, "10 units = 1 grid"],
+        "offset +-": ["int", 221, "10 units = 1 grid"],
+        "ease out": ["bool", 261],
+        "easing2": ["int ∈ [0, 18]", 248],
+        "easing2 rate": ["float", 249],
+
+        "offset Y": ["int", 252],
+        "offset Y +-": ["int", 253],
+
+        "mod front": ["float", 263],
+        "mod back": ["float", 264],
+
+        "deadzone": ["float", 282],
+
+        "dir buttons DIR": ["int ∈ [0, 2]", 262, "all, horiz, vert"],
+        "dir buttons INWARDS": ["bool", 276],
+        "dir buttons SINGLE ARROW": [
+            "bool",
+            283,
+            "seems to be true when DIR is alleeeeeeeeee"
+        ],
+
+        "DE AP": ["bool", 539],
+        "ignore linked": ["bool", 281],
+        "ignore gparent": ["bool", 280],
+
+        "effect id": ["int", 225],
+
+        "target id": ["int", 51],
+        "center id": ["int", 71],
+
+        "priority": ["int", 341],
+
+        "center P1/P2/C/.../TR": ["int ∈ [-11, 0]", 341]
+    },
+    "$EDIT AREA TRIGGER COMMON": {
+        "$INCLUDE": [
+            {
+                "name": "$AREA TRIGGER COMMON",
+                "with": [
+                    "length",
+                    "length +-",
+                    "offset",
+                    "offset +-",
+                    "offset Y",
+                    "offset Y +-",
+                    "mod front",
+                    "mod back",
+                    "deadzone"
+                ]
+            }
+        ],
+
+        "group/effect id": ["int", 51],
+        "use eid": ["bool", 355]
+    },
+
+    "Object Common": {
+        "id": ["int", 1],
+        "x": ["int", 2],
+        "y": ["int", 3],
+        "flip horiz": ["bool", 4],
+        "flip vert": ["bool", 5],
+        "rotation": ["float", 6],
+        "scale": ["float", 32],
+        "scale X": ["float", 128],
+        "scale Y": ["float", 129],
+
+        "warp Y angle": ["float", 131],
+        "warp X angle": ["float", 132]
+    },
+    "Trigger Common": {
+        "duration": ["float", 10],
+
+        "spawn triggered": ["bool", 62],
+        "touch triggered": ["bool", 1],
+        "multi triggered": ["bool", 87],
+
+        "easing": ["int ∈ [0, 18]", 30],
+        "easing rate": ["float", 85]
+    },
+
+    "Move Trigger": {
+        "moveX": ["int", 28, "10 units = 1 grid"],
+        "moveY": ["int", 29, "10 units = 1 grid"],
+        "lockXPlayer": ["bool", 58],
+        "modX": ["float", 143],
+        "lockYPlayer": ["bool", 50],
+        "modY": ["float", 144],
+
+        "lockXCamera": ["bool", 141],
+        "lockYCamera": ["bool", 142],
+
+        "target mode": ["bool", 100],
+        "target/dir mode centerGroup": ["int", 395],
+        "target/dir mode targetGroup": ["int", 71],
+
+        "target/dir mode targetP1": ["bool", 138],
+        "target/dir mode targetP2": ["bool", 200],
+
+        "target mode X/Y only": ["int ∈ [0, 2]", 101],
+
+        "direction mode": ["bool", 394],
+        "direction mode distance": ["int", 396, "10 units = 1 grid"],
+
+        "silent": ["bool", 544]
+    },
+    "Spawn Trigger": {
+        "target id": ["int", 51],
+        "delay": ["float", 63],
+        "delay +-": ["float", 556],
+        "preview disable": ["bool", 102],
+        "spawn ordered": ["bool", 441],
+        "reset remap": ["bool", 581],
+        "group remaps": ["string", 442]
+    },
+    "Rotate Trigger": {
+        "degrees": ["float", 68],
+        "x360": ["int", 69],
+
+        "target group": ["int", 51],
+        "center group": ["int", 71],
+
+        "aim mode": ["bool", 100],
+        "follow mode": ["bool", 394],
+
+        "rot target id": ["int", 401],
+        "rot offset": ["float", 402],
+
+        "aim/follow mode targetP1": ["bool", 138],
+        "aim/follow mode targetP2": ["bool", 200],
+
+        "dynamic mode": ["bool", 397],
+        "dynamic mode easing": ["int", 403],
+
+        "lock obj rot": ["bool", 70],
+
+        "minX id": ["int", 516],
+        "minY id": ["int", 517],
+        "maxX id": ["int", 518],
+        "maxY id": ["int", 519]
+    },
+    "Scale Trigger": {
+        "scale X": ["float", 150],
+        "scale Y": ["float", 151],
+        "div X": ["bool", 153],
+        "div Y": ["bool", 154],
+
+        "target group": ["int", 51],
+        "center group": ["int", 71],
+
+        "only move": ["bool", 133],
+
+        "relative scale": ["bool", 577],
+        "relative rot": ["bool", 452]
+    },
+    "Follow Trigger": {
+        "X Mod": ["float", 72],
+        "Y Mod": ["float", 73],
+
+        "target group": ["int", 51],
+        "follow group": ["int", 71]
+    },
+    "Stop Trigger": {
+        "target ID": ["int", 51],
+        "use control id": ["bool", 535],
+        "stop/pause/resume": ["int ∈ [0, 2]", 101]
+    },
+    "Keyframe Anim Trigger": {
+        "animation group id": ["int", 76],
+        "target id": ["int", 51],
+        "parent id": ["int", 71],
+
+        "time mod": ["float", 520],
+
+        "position X mod": ["float", 521],
+        "position Y mod": ["float", 545],
+
+        "rotation mod": ["float", 522],
+
+        "scale X mod": ["float", 523],
+        "scale Y mod": ["float", 546]
+    },
+    "Follow Player Y Trigger": {
+        "speed": ["float", 90],
+        "delay": ["float", 91],
+        "offset": ["int", 92, "10 units = 1 grid"],
+        "max speed": ["float", 105],
+        "target id": ["int", 51]
+    },
+    "Advanced Follow Trigger": {
+        "target id": ["int", 51],
+        "follow id": ["int", 71],
+        "priority": ["int", 365],
+        "X only": ["bool", 306],
+        "Y only": ["bool", 307],
+
+        "follow P1": ["bool", 138],
+        "follow P2": ["bool", 200],
+        "follow C": ["bool", 201],
+
+        "rot offset": ["int", 340],
+        "rot easing": ["int", 363],
+        "rot deadZ": ["int", 364],
+        "ignore disabled": ["bool", 336],
+        "rotate dir": ["bool", 339],
+        "init set add": ["int ∈ [0, 2]", 572],
+        "exclusive": ["bool", 571],
+
+        "page 2 1/2/3": ["int ∈ [0, 2]", 367],
+
+        "delay": ["float", 292],
+        "delay +-": ["float", 293],
+        "max speed": ["float", 298],
+        "max speed +-": ["float", 299],
+        "max range": ["int", 308],
+        "max range +-": ["int", 309],
+        "max range unmarked?": ["int", 366],
+        "easing": ["float", 361],
+        "easing +-": ["float", 362],
+
+        "start speed": ["float", 300],
+        "start speed +-": ["float", 301],
+        "start speed unmarked?": ["int", 560],
+
+        "start dir": ["int", 563],
+        "start dir +-": ["int", 564],
+        "start dir unmarked?": ["int", 565],
+
+        "acceleration": ["float", 334],
+        "acceleration +-": ["float", 335],
+
+        "friction": ["float", 558],
+        "friction +-": ["float", 559],
+
+        "near dist": ["float", 359],
+        "near dist +-": ["float", 360],
+
+        "near friction": ["float", 561],
+        "near friction +-": ["float", 562],
+
+        "near accel": ["float", 357],
+        "near accel +-": ["float", 358],
+
+        "steer force": ["float", 316],
+        "steer force +-": ["float", 317],
+
+        "steer force low": ["float", 318],
+        "steer force low +-": ["float", 319],
+        "steer force low checkbox": ["bool", 337],
+
+        "speed range low": ["float", 322],
+        "speed range low +-": ["float", 323],
+
+        "steer force high": ["float", 320],
+        "steer force high +-": ["float", 321],
+        "steer force high checkbox": ["bool", 338],
+
+        "speed range high": ["float", 324],
+        "speed range high +-": ["float", 325],
+
+        "slow dist": ["int", 359],
+        "slow dist +-": ["int", 360],
+
+        "break force": ["float", 326],
+        "break force +-": ["float", 327],
+
+        "break angle": ["int", 328],
+        "break angle +-": ["int", 329],
+
+        "break steer force": ["float", 330],
+        "break steer force +-": ["float", 331],
+
+        "break steer speed limit": ["float", 332],
+        "break steer speed limit +-": ["float", 333],
+
+        "target dir": ["bool", 305]
+    },
+    "Edit Advanced Follow Trigger": {
+        "target id": ["int", 51],
+        "X only": ["bool", 306],
+        "Y only": ["bool", 307],
+
+        "mod X": ["float", 566],
+        "mod X +-": ["float", 567],
+
+        "mod Y": ["float", 568],
+        "mod Y +-": ["float", 569],
+
+        "speed": ["float", 300],
+        "speed +-": ["float", 301],
+        "speed unmarked?": ["int", 560],
+
+        "dir": ["int", 363],
+        "dir +-": ["int", 364],
+        "dir unmarked?": ["int", 565],
+
+        "target control id": ["bool", 535],
+        "redirect dir": ["bool", 570]
+    },
+    "Retarget Advanced Follow Trigger": {
+        "target id": ["int", 51],
+        "follow id": ["int", 71],
+        "target control id": ["bool", 535],
+
+        "follow P1": ["bool", 138],
+        "follow P2": ["bool", 200],
+        "follow C": ["bool", 201]
+    },
+
+    "Keyframe Object": {
+        "group id": ["int", 51],
+        "x360": ["int", 537],
+        "spawn gid": ["int", 71],
+        "spawn delay": ["float", 557],
+        "curve": ["bool", 378],
+        "cw/ccw": ["int ∈ [0, 2]", 536, "cw: 1, ccw: 2"],
+        "time/even/dist": ["int ∈ [0, 2]", 379],
+        "prox": ["bool", 377],
+
+        "ref only": ["bool", 375],
+        "auto layer": ["bool", 459],
+        "preview art": ["bool", 380],
+        "close loop": ["bool", 376],
+
+        "anim id?": ["int", 373],
+
+        "line opacity": ["float", 524]
+    },
+
+    "Area Move Trigger": {
+        "move dist": ["int", 218, "10 units = 1 grid"],
+        "move dist +-": ["int", 219, "10 units = 1 grid"],
+
+        "move angle": ["int", 231],
+        "move angle +-": ["int", 232],
+
+        "rfade": ["float", 288],
+
+        "relative": ["bool", 287],
+
+        "xy mode": ["bool", 241],
+
+        "moveX": ["int", 237, "10 units = 1 grid"],
+        "moveX +-": ["int", 238, "10 units = 1 grid"],
+        "moveY": ["int", 239, "10 units = 1 grid"],
+        "moveY +-": ["int", 240, "10 units = 1 grid"],
+
+        "$INCLUDE": ["$AREA TRIGGER COMMON"]
+    },
+    "Area Rotate Trigger": {
+        "rotation": ["float", 270],
+        "rotation +-": ["float", 271],
+
+        "$INCLUDE": ["$AREA TRIGGER COMMON"]
+    },
+    "Area Scale Trigger": {
+        "scale X": ["float", 233],
+        "scale X +-": ["float", 234],
+
+        "scale Y": ["float", 235],
+        "scale Y +-": ["float", 236],
+
+        "$INCLUDE": ["$AREA TRIGGER COMMON"]
+    },
+    "Area Fade Trigger": {
+        "from opacity": ["float", 286],
+        "to opacity": ["float", 275],
+
+        "$INCLUDE": [
+            {
+                "name": "$AREA TRIGGER COMMON",
+                "without": ["ease out", "easing2", "easing rate"]
+            }
+        ]
+    },
+    "Area Tint Trigger": {
+        "color channel": ["int", 260],
+        "tint": ["float", 265],
+
+        "main only": ["bool", 65],
+        "secondary only": ["bool", 66],
+
+        "hsv on": ["bool", 278],
+        "hsv": ["hsvstr", 49],
+
+        "$INCLUDE": [
+            {
+                "name": "$AREA TRIGGER COMMON",
+                "without": ["ease out", "easing2", "easing rate"]
+            }
+        ]
+    },
+
+    "Edit Area Move Trigger": {
+        "$INCLUDE": [
+            "$EDIT AREA TRIGGER COMMON",
+            {
+                "name": "Area Move Trigger",
+                "with": [
+                    "move dist",
+                    "move dist +-",
+                    "move angle",
+                    "move angle +-",
+                    "rfade",
+                    "xy mode",
+                    "moveX",
+                    "moveX +-",
+                    "moveY",
+                    "moveY +-"
+                ]
+            }
+        ]
+    },
+    "Edit Area Rotate Trigger": {
+        "$INCLUDE": [
+            "$EDIT AREA TRIGGER COMMON",
+            {
+                "name": "Area Rotate Trigger",
+                "with": ["rotation", "rotation +-"]
+            }
+        ]
+    },
+    "Edit Area Scale Trigger": {
+        "$INCLUDE": [
+            "$EDIT AREA TRIGGER COMMON",
+            {
+                "name": "Area Scale Trigger",
+                "with": ["scale X", "scale X +-", "scale Y", "scale Y +-"]
+            }
+        ]
+    },
+    "Edit Area Fade Trigger": {
+        "$INCLUDE": [
+            "$EDIT AREA TRIGGER COMMON",
+            {
+                "name": "Area Fade Trigger",
+                "with": ["to opacity"]
+            }
+        ]
+    },
+    "Edit Area Tint Trigger": {
+        "$INCLUDE": [
+            "$EDIT AREA TRIGGER COMMON",
+            {
+                "name": "Area Tint Trigger",
+                "with": ["tint", "hsv", "hsv on"]
+            }
+        ]
+    },
+    "Stop Area Trigger": {
+        "effect id": ["int", 51]
+    },
+
+    "Background Trigger": {
+        "background": ["int ∈ [1, 59]", 533]
+    },
+    "Ground Trigger": {
+        "ground": ["int ∈ [1, 22]", 533]
+    },
+    "Middle Ground Trigger": {
+        "middle ground": ["int ∈ [0, 3]", 533]
+    },
+
+    "Touch Trigger": {
+        "group id": ["int", 51],
+        "hold mode": ["bool", 81],
+        "p1/p2 only": ["int ∈ [0, 2]", 198],
+        "toggle on/off": ["int ∈ [0, 2]", 82],
+        "dual mode": ["bool", 89]
+    },
+    "Count Trigger": {
+        "item id": ["int", 80],
+        "target id": ["int", 51],
+        "target count": ["int", 77],
+        "activate group": ["bool", 56],
+        "multi activate": ["bool", 104]
+    },
+    "Instant Count Trigger": {
+        "item id": ["int", 80],
+        "target id": ["int", 51],
+        "target count": ["int", 77],
+        "activate group": ["bool", 56],
+        "equals/larger/smaller": ["int ∈ [0, 2]", 88]
+    },
+
+    "Gradient Trigger": {
+        "blending": ["int ∈ [0, 3]", 174],
+        "layer": ["int ∈ [1, 15]", 202],
+        "U/BL": ["int", 203],
+        "D/BR": ["int", 204],
+        "L/TL": ["int", 205],
+        "R/TR": ["int", 206],
+        "vertex mode": ["bool", 207],
+        "disable": ["bool", 208],
+        "id": ["int", 209],
+        "preview opacity": ["float", 456],
+        "disable all": ["bool", 508]
+    },
+
+    "Static Camera Trigger": {
+        "follow": ["bool", 212],
+        "follow easing": ["float", 213],
+        "smooth velocity": ["bool", 453],
+        "smooth velocity modifier": ["float", 454],
+        "exit instant": ["bool", 465],
+        "exit static": ["bool", 110]
+    },
+    "Camera Zoom Trigger": {
+        "zoom": ["float", 371]
+    },
+    "Rotate Camera Trigger": {
+        "degrees": ["float", 68],
+        "add": ["bool", 70],
+        "snap360": ["bool", 394]
+    },
+    "Camera Edge Trigger": {
+        "edge": ["int ∈ [0, 4]", 164],
+        "target id": ["int", 51]
+    },
+    "Camera Mode Trigger": {
+        "free mode": ["bool", 111],
+        "edit camera settings": ["bool", 112],
+        "easing": ["int", 113],
+        "padding": ["float", 114],
+        "disable gridsnap": ["bool", 370]
+    },
+    "Camera Guide": {
+        "zoom": ["float", 371],
+        "offsetX": ["int", 28],
+        "offsetY": ["int", 29],
+        "preview opacity": ["float", 506]
+    },
+    "Camera Offset": {
+        "offsetX": ["int", 28],
+        "offsetY": ["int", 29],
+        "x/y only": ["int ∈ [0, 2]", 101]
+    }
+}

@@ -4,11 +4,14 @@
         SOMETHING = "something in the future maybe",
     }
 
+    import ObjProps from "./props/ObjProps.svelte";
+    import "./props/props";
+
     let currentPage = Page.OBJ_PROPS;
 </script>
 
 <div
-    class="w-screen h-screen bg-gray-900 p-2 flex flex-col text-gray-100 font-saira"
+    class="w-screen h-screen bg-gray-900 p-2 flex flex-col text-gray-100 font-saira gap-2"
 >
     <div
         class="h-16 w-full bg-gray-800 border-2 border-gray-500 rounded-lg flex items-center pl-2 shadow-lg"
@@ -27,9 +30,13 @@
             {/each}
         </div>
     </div>
-    <div class="">
-        <!--  -->
+    <div
+        class="flex flex-col bg-gray-800 h-full p-4 rounded-lg text-lg font-medium overflow-hidden"
+    >
+        {#if currentPage == Page.OBJ_PROPS}
+            <ObjProps></ObjProps>
+        {:else if currentPage == Page.SOMETHING}
+            idk
+        {/if}
     </div>
 </div>
-
-<button>gaga</button>
