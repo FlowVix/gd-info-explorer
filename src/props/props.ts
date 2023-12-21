@@ -26,7 +26,6 @@ export type Props = {
 };
 
 const getCollapsedProps = (rawProps: { [namespace: string]: RawNamespace }) => {
-    console.log("get");
     let out: Props = {};
 
     const doInclude = (into: Namespace, inc: Include) => {
