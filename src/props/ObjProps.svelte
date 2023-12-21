@@ -64,9 +64,13 @@
                 ><Highlighted text={name} search={trimmedSearch} /></span
             >
 
-            <div class="flex flex-col h-full pl-5">
+            <div
+                class="flex flex-col h-full px-3 [&>*:nth-child(2n)]:bg-black/15"
+            >
                 {#each v as [name, { type, id, note }]}
-                    <div class="flex justify-stretch h-full text-gray-300">
+                    <div
+                        class="flex justify-stretch h-full text-gray-300 rounded-md pl-2"
+                    >
                         <div class="h-full flex-[2]">
                             <Highlighted text={name} search={trimmedSearch} />
                         </div>
