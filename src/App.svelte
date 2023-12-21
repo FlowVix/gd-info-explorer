@@ -14,7 +14,7 @@
     class="w-screen h-screen bg-gray-900 p-2 flex flex-col text-gray-100 font-saira gap-2"
 >
     <div
-        class="h-16 w-full bg-gray-800 border-2 border-gray-500 rounded-lg flex items-center pl-2 shadow-lg"
+        class="w-full bg-gray-800 border-2 border-gray-500 rounded-lg flex items-center p-2 shadow-lg"
     >
         <span class="font-bold text-3xl mr-4">GD Info Explorer</span>
         <div>

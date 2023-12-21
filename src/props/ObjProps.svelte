@@ -1,5 +1,6 @@
 <script lang="ts">
     import { PROPS, type Namespace, type Prop } from "../props/props";
+    import Highlighted from "./Highlighted.svelte";
 
     let search = "";
 
@@ -30,8 +31,9 @@
             }
         }
     };
+    $: trimmedSearch = search.trim().toLowerCase();
 
-    $: updateResults(search.trim().toLowerCase());
+    $: updateResults(trimmedSearch);
 </script>
 
 <!-- <button>gaga</button> -->
@@ -58,14 +60,25 @@
     </div>
     {#each results as [name, v]}
         <div class="flex flex-col rounded-lg bg-gray-700 p-2 drop-shadow-md">
-            <span class="text-2xl mb-2">{name}</span>
+            <span class="text-2xl mb-2"
+                ><Highlighted text={name} search={trimmedSearch} /></span
+            >
 
             <div class="flex flex-col h-full pl-5">
                 {#each v as [name, { type, id, note }]}
                     <div class="flex justify-stretch h-full text-gray-300">
-                        <div class="h-full flex-[2]">{name}</div>
-                        <div class="h-full flex-1 text-blue-200">{type}</div>
-                        <div class="h-full flex-1 text-orange-200">{id}</div>
+                        <div class="h-full flex-[2]">
+                            <Highlighted text={name} search={trimmedSearch} />
+                        </div>
+                        <div class="h-full flex-1 text-blue-200">
+                            <Highlighted text={type} search={trimmedSearch} />
+                        </div>
+                        <div class="h-full flex-1 text-orange-200">
+                            <Highlighted
+                                text={`${id}`}
+                                search={trimmedSearch}
+                            />
+                        </div>
                         <div class="h-full flex-[2] text-gray-400">
                             {note ?? ""}
                         </div>
