@@ -7,6 +7,8 @@
     } from "../props/props";
     import Highlighted from "./Highlighted.svelte";
 
+    import particleProps from "./paticle_props.json";
+
     let search = "";
 
     let results: [string, [string, Prop][]][] = [];
@@ -56,6 +58,12 @@
 
         document.body.removeChild(a);
     };
+
+    enum Popup {
+        PARTICLE_PROPS,
+    }
+
+    let popup: Popup | null = null;
 </script>
 
 <!-- <button>gaga</button> -->
@@ -75,14 +83,20 @@
             bind:value={search}
         />
     </div>
-    <button
-        class="bg-gray-700 hover:bg-gray-500 active:bg-gray-600 h-12 rounded-lg p-2 font-semibold text-xl my-2 drop-shadow-md"
-        on:click={downloadJSON}>Download JSON</button
-    >
+    <div class="flex gap-4">
+        <button
+            class="bg-gray-700 hover:bg-gray-500 active:bg-gray-600 h-12 rounded-lg p-2 font-semibold text-xl my-2 drop-shadow-md"
+            on:click={() => (popup = Popup.PARTICLE_PROPS)}
+            >Particle Properties</button
+        ><button
+            class="bg-gray-700 hover:bg-gray-500 active:bg-gray-600 h-12 rounded-lg p-2 font-semibold text-xl my-2 drop-shadow-md"
+            on:click={downloadJSON}>Download JSON</button
+        >
+    </div>
 </div>
 <div class="flex flex-col gap-2 overflow-y-auto rounded-lg mt-2">
     <div
-        class="flex justify-stretch h-full rounded-lg bg-gray-600 text-gray-300 p-2 pl-6 drop-shadow-md"
+        class="flex justify-stretch h-full rounded-lg bg-gray-700 text-gray-300 p-2 pl-6 drop-shadow-md"
     >
         <div class="h-full flex-[2]">Property</div>
         <div class="h-full flex-1 text-blue-200">Value type</div>
@@ -97,7 +111,7 @@
             >
 
             <div
-                class="flex flex-col h-full px-3 [&>*:nth-child(2n)]:bg-black/15"
+                class="flex flex-col h-full px-3 [&>*:nth-child(2n+1)]:bg-black/15"
             >
                 {#each v as [name, { type, id, note }]}
                     <div
@@ -127,3 +141,39 @@
     {/each}
     <!--  -->
 </div>
+{#if popup != null}
+    <div
+        class="absolute left-0 top-0 w-screen h-screen bg-black/50 backdrop-blur-xl flex justify-center items-center"
+    >
+        <div
+            class="bg-gray-800 w-3/4 h-3/4 rounded-lg border-2 border-gray-500 shadow-xl flex flex-col items-center justify-between p-4 gap-4"
+        >
+            <div class="overflow-y-auto w-full">
+                {#if popup == Popup.PARTICLE_PROPS}
+                    Custom particle objects have most of their settings in
+                    property id 145, which is a long string of values separated
+                    by `a`.
+                    <br />
+                    These are the values in the order they appear in the string:
+                    <br />
+                    <br />
+                    <div class="flex flex-col items-center">
+                        {#each particleProps as prop, i}
+                            <div class="flex w-full gap-4">
+                                <span class="text-gray-500 w-20 text-right"
+                                    >{i}.</span
+                                >
+                                <span class="text-gray-300">{prop}</span>
+                            </div>
+                        {/each}
+                    </div>
+                {/if}
+            </div>
+            <button
+                class="bg-gray-700 hover:bg-gray-500 active:bg-gray-600 h-12 rounded-lg p-2 font-semibold text-xl drop-shadow-md"
+                on:click={() => (popup = null)}>Close</button
+            >
+        </div>
+        <!--  -->
+    </div>
+{/if}

@@ -78,7 +78,54 @@
         "scale Y": ["float", 129],
 
         "warp Y angle": ["float", 131],
-        "warp X angle": ["float", 132]
+        "warp X angle": ["float", 132],
+
+        "groups": [
+            "string",
+            57,
+            "period separated list, includes the pink groups"
+        ],
+        "pink groups": ["string", 274, "period separated list"],
+
+        "editor layer": ["int", 20],
+        "editor layer 2": ["int", 61],
+
+        "z layer": ["int", 24],
+        "z order": ["int", 25],
+
+        "ord": ["int", 115],
+        "channel": ["int", 170],
+
+        "edp": ["bool", 13]
+    },
+    "Object Extra": {
+        "don't fade": ["bool", 64],
+        "don't enter": ["bool", 67],
+        "no effects": ["bool", 116],
+        "group parent": ["bool", 34],
+        "area parent": ["bool", 279],
+        "dont boost y": ["bool", 496],
+        "dont boost x": ["bool", 509],
+        "single ptouch": ["bool", 284],
+        "high detail": ["bool", 103],
+        "no touch": ["bool", 121],
+        "passable": ["bool", 134],
+        "hide": ["bool", 135],
+        "non stick x": ["bool", 136],
+        "extra sticky": ["bool", 495],
+        "extended collision": ["bool", 511],
+        "center effect": ["bool", 369],
+        "ice block": ["bool", 137],
+        "grip slope": ["bool", 193],
+        "no glow": ["bool", 96],
+        "no particle": ["bool", 507],
+        "non stick y": ["bool", 289],
+        "scale stick": ["bool", 356],
+        "no audio scale": ["bool", 372],
+        "reverse": ["bool", 117],
+
+        "enter channel": ["int", 343],
+        "material": ["int", 446]
     },
     "Trigger Common": {
         "duration": ["float", 10],
@@ -89,6 +136,23 @@
 
         "easing": ["int ∈ [0, 18]", 30],
         "easing rate": ["float", 85]
+    },
+
+    "Custom Particles": {
+        "particle data": [
+            "string",
+            145,
+            "list separated by `a`, check above for properties in order"
+        ],
+        "use obj color": ["bool", 146],
+        "uniform obj color": [
+            "bool",
+            147,
+            "for some reason, this value is also present in the particle data string 😰"
+        ],
+        "animate on trigger": ["bool", 123],
+        "animate active only": ["bool", 214],
+        "quick start": ["bool", 211]
     },
 
     "Move Trigger": {
@@ -403,7 +467,7 @@
         "secondary only": ["bool", 66],
 
         "hsv on": ["bool", 278],
-        "hsv": ["hsvstr", 49],
+        "hsv": ["hsv string", 49],
 
         "$INCLUDE": [
             {
