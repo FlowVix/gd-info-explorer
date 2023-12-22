@@ -78,7 +78,7 @@
         "duration": ["float", 10],
 
         "spawn triggered": ["bool", 62],
-        "touch triggered": ["bool", 1],
+        "touch triggered": ["bool", 11],
         "multi triggered": ["bool", 87],
 
         "easing": ["int ∈ [0, 18]", 30],
