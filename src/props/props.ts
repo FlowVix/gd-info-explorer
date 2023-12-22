@@ -25,8 +25,11 @@ export type Props = {
     [namespace: string]: Namespace;
 };
 
-const getCollapsedProps = (rawProps: { [namespace: string]: RawNamespace }) => {
+const getCollapsedProps = (rawProps: {
+    [namespace: string]: RawNamespace;
+}): [Props, number] => {
     let out: Props = {};
+    let propertiesFound = new Set();
 
     const doInclude = (into: Namespace, inc: Include) => {
         let temp: Namespace = {};
@@ -52,6 +55,7 @@ const getCollapsedProps = (rawProps: { [namespace: string]: RawNamespace }) => {
                 continue;
             }
             let [type, id, note] = v as RawProp;
+            propertiesFound.add(id);
             into[k] = { type, id, note };
         }
     };
@@ -64,7 +68,7 @@ const getCollapsedProps = (rawProps: { [namespace: string]: RawNamespace }) => {
         addProps(out[namespace], v);
     }
 
-    return out;
+    return [out, propertiesFound.size];
 };
 
-export const PROPS = getCollapsedProps(rawProps as any);
+export const [PROPS, FOUND_PROPS] = getCollapsedProps(rawProps as any);

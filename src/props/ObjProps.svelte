@@ -1,5 +1,10 @@
 <script lang="ts">
-    import { PROPS, type Namespace, type Prop } from "../props/props";
+    import {
+        PROPS,
+        type Namespace,
+        type Prop,
+        FOUND_PROPS,
+    } from "../props/props";
     import Highlighted from "./Highlighted.svelte";
 
     let search = "";
@@ -34,6 +39,23 @@
     $: trimmedSearch = search.trim().toLowerCase();
 
     $: updateResults(trimmedSearch);
+
+    const downloadJSON = () => {
+        let jsonString = JSON.stringify(PROPS, null, 4);
+
+        let blob = new Blob([jsonString], { type: "application/json" });
+
+        let a = document.createElement("a");
+        a.href = window.URL.createObjectURL(blob);
+
+        a.download = "obj_props.json";
+
+        document.body.appendChild(a);
+
+        a.click();
+
+        document.body.removeChild(a);
+    };
 </script>
 
 <!-- <button>gaga</button> -->
@@ -41,13 +63,23 @@
     >This is still very much a work in progress! 2.2 has just been released so
     I'm still finding property ids. If you find any mistakes, let me know on
     GitHub!</span
-><br />
-<span>Search for property name or ID</span>
-<input
-    type="text"
-    class="bg-gray-900 w-[400px] h-12 rounded-lg p-2 font-semibold text-xl my-2 drop-shadow-md"
-    bind:value={search}
-/>
+>
+<span class="text-orange-200">Found {FOUND_PROPS} prop ids so far.</span>
+<br />
+<div class="flex justify-between">
+    <div>
+        <span>Search for property name, ID, or type</span><br />
+        <input
+            type="text"
+            class="bg-gray-900 w-[400px] h-12 rounded-lg p-2 font-semibold text-xl my-2 drop-shadow-md"
+            bind:value={search}
+        />
+    </div>
+    <button
+        class="bg-gray-700 hover:bg-gray-500 active:bg-gray-600 h-12 rounded-lg p-2 font-semibold text-xl my-2 drop-shadow-md"
+        on:click={downloadJSON}>Download JSON</button
+    >
+</div>
 <div class="flex flex-col gap-2 overflow-y-auto rounded-lg mt-2">
     <div
         class="flex justify-stretch h-full rounded-lg bg-gray-600 text-gray-300 p-2 pl-6 drop-shadow-md"
