@@ -5,6 +5,10 @@
 
         "offset": ["int", 220],
         "offset +-": ["int", 221],
+
+        "easing": ["int ∈ [0, 18]", 242],
+        "easing rate": ["float", 243],
+
         "ease out": ["bool", 261],
         "easing2": ["int ∈ [0, 18]", 248],
         "easing2 rate": ["float", 249],
@@ -51,7 +55,9 @@
                     "offset Y +-",
                     "mod front",
                     "mod back",
-                    "deadzone"
+                    "deadzone",
+                    "easing",
+                    "easing rate"
                 ]
             }
         ],
@@ -379,7 +385,13 @@
         "$INCLUDE": [
             {
                 "name": "$AREA TRIGGER COMMON",
-                "without": ["ease out", "easing2", "easing rate"]
+                "without": [
+                    "easing",
+                    "easing rate",
+                    "ease out",
+                    "easing2",
+                    "easing rate"
+                ]
             }
         ]
     },
@@ -396,7 +408,13 @@
         "$INCLUDE": [
             {
                 "name": "$AREA TRIGGER COMMON",
-                "without": ["ease out", "easing2", "easing rate"]
+                "without": [
+                    "easing",
+                    "easing rate",
+                    "ease out",
+                    "easing2",
+                    "easing rate"
+                ]
             }
         ]
     },
