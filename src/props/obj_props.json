@@ -22,7 +22,7 @@
         "dir buttons SINGLE ARROW": [
             "bool",
             283,
-            "seems to be true when DIR is alleeeeeeeeee"
+            "seems to be true when DIR is all"
         ],
 
         "DE AP": ["bool", 539],
