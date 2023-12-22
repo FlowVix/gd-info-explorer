@@ -1,10 +1,10 @@
 {
     "$AREA TRIGGER COMMON": {
-        "length": ["int", 222, "10 units = 1 grid"],
-        "length +-": ["int", 223, "10 units = 1 grid"],
+        "length": ["int", 222],
+        "length +-": ["int", 223],
 
-        "offset": ["int", 220, "10 units = 1 grid"],
-        "offset +-": ["int", 221, "10 units = 1 grid"],
+        "offset": ["int", 220],
+        "offset +-": ["int", 221],
         "ease out": ["bool", 261],
         "easing2": ["int ∈ [0, 18]", 248],
         "easing2 rate": ["float", 249],
@@ -86,8 +86,8 @@
     },
 
     "Move Trigger": {
-        "moveX": ["int", 28, "10 units = 1 grid"],
-        "moveY": ["int", 29, "10 units = 1 grid"],
+        "moveX": ["int", 28],
+        "moveY": ["int", 29],
         "lockXPlayer": ["bool", 58],
         "modX": ["float", 143],
         "lockYPlayer": ["bool", 50],
@@ -106,7 +106,7 @@
         "target mode X/Y only": ["int ∈ [0, 2]", 101],
 
         "direction mode": ["bool", 394],
-        "direction mode distance": ["int", 396, "10 units = 1 grid"],
+        "direction mode distance": ["int", 396],
 
         "silent": ["bool", 544]
     },
@@ -193,7 +193,7 @@
     "Follow Player Y Trigger": {
         "speed": ["float", 90],
         "delay": ["float", 91],
-        "offset": ["int", 92, "10 units = 1 grid"],
+        "offset": ["int", 92],
         "max speed": ["float", 105],
         "target id": ["int", 51]
     },
@@ -338,8 +338,8 @@
     },
 
     "Area Move Trigger": {
-        "move dist": ["int", 218, "10 units = 1 grid"],
-        "move dist +-": ["int", 219, "10 units = 1 grid"],
+        "move dist": ["int", 218],
+        "move dist +-": ["int", 219],
 
         "move angle": ["int", 231],
         "move angle +-": ["int", 232],
@@ -350,10 +350,10 @@
 
         "xy mode": ["bool", 241],
 
-        "moveX": ["int", 237, "10 units = 1 grid"],
-        "moveX +-": ["int", 238, "10 units = 1 grid"],
-        "moveY": ["int", 239, "10 units = 1 grid"],
-        "moveY +-": ["int", 240, "10 units = 1 grid"],
+        "moveX": ["int", 237],
+        "moveX +-": ["int", 238],
+        "moveY": ["int", 239],
+        "moveY +-": ["int", 240],
 
         "$INCLUDE": ["$AREA TRIGGER COMMON"]
     },
