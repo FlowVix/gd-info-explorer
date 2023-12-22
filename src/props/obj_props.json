@@ -540,5 +540,81 @@
         "offsetX": ["int", 28],
         "offsetY": ["int", 29],
         "x/y only": ["int ∈ [0, 2]", 101]
+    },
+
+    "Song Trigger": {
+        "volume": ["float", 406],
+        "speed": ["int", 404],
+        "channel": ["int", 432],
+        "loop": ["bool", 413],
+
+        "start": ["int", 408],
+        "fade in": ["int", 409],
+        "end": ["int", 410],
+        "fade out": ["int", 411],
+
+        "prep": ["bool", 399],
+        "load prep": ["bool", 400],
+        "song": ["int", 392]
+    },
+
+    "Pickup Trigger": {
+        "item id": ["int", 80],
+        "count": ["int", 77],
+        "override": ["bool", 139],
+        "multiply/divide": ["int ∈ [0, 2]", 88],
+        "modifier": ["float", 449]
+    },
+
+    "Time Trigger": {
+        "start time": ["float", 467],
+        "stop time": ["float", 473],
+        "item id": ["int", 80],
+        "target id": ["int", 51],
+        "time mod": ["float", 470],
+        "ignore timewarp": ["bool", 469],
+        "start paused": ["bool", 471],
+        "dont override": ["bool", 468],
+        "unmarked checkbox": ["bool", 474]
+    },
+    "Time Event Trigger": {
+        "item id": ["int", 80],
+        "target id": ["int", 51],
+        "target time": ["float", 473],
+        "multi activate": ["bool", 475]
+    },
+    "Time Control Trigger": {
+        "item id": ["int", 80],
+        "start/stop": ["bool", 472]
+    },
+
+    "Item Edit": {
+        "item id 1": ["int", 80],
+        "item id 2": ["int", 95],
+        "target item id": ["int", 51],
+
+        "typ 1": ["int ∈ [0, 5]", 476],
+        "typ 2": ["int ∈ [0, 5]", 477],
+        "target typ": ["int ∈ [1, 3]", 478],
+
+        "mod": ["float", 479],
+
+        "assign op": ["int ∈ [0, 4]", 480],
+        "op1": [
+            "int ∈ [1, 4]",
+            481,
+            "these are the UI allowed values, full range might be possible"
+        ],
+        "op2": [
+            "int ∈ [3, 4]",
+            482,
+            "these are the UI allowed values, full range might be possible"
+        ],
+
+        "abs/neg 1": ["int ∈ [0, 2]", 578],
+        "abs/neg 2": ["int ∈ [0, 2]", 579],
+
+        "rnd/flr/cei 1": ["int ∈ [0, 3]", 485],
+        "rnd/flr/cei 2": ["int ∈ [0, 3]", 486]
     }
 }
