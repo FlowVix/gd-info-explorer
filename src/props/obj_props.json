@@ -80,6 +80,14 @@
         "warp Y angle": ["float", 131],
         "warp X angle": ["float", 132],
 
+        "color 1": ["int", 21],
+        "color 2": ["int", 22],
+
+        "color 1 hsv enabled": ["bool", 41],
+        "color 1 hsv": ["hsv string", 43],
+        "color 2 hsv enabled": ["bool", 42],
+        "color 2 hsv": ["hsv string", 44],
+
         "groups": [
             "string",
             57,
@@ -96,7 +104,13 @@
         "ord": ["int", 115],
         "channel": ["int", 170],
 
-        "edp": ["bool", 13]
+        "edp": ["bool", 13],
+
+        "linked group": [
+            "int",
+            108,
+            "the id of the editor link group this object is in (link controls)"
+        ]
     },
     "Object Extra": {
         "don't fade": ["bool", 64],
@@ -127,6 +141,11 @@
         "enter channel": ["int", 343],
         "material": ["int", 446]
     },
+
+    "Misc": {
+        "orange teleportation portal distance": ["float", 54]
+    },
+
     "Trigger Common": {
         "duration": ["float", 10],
 
@@ -155,16 +174,65 @@
         "quick start": ["bool", 211]
     },
 
+    "Text Object": {
+        "text": ["string", 31, "base64 encoded"],
+        "kerning": ["int", 488]
+    },
+
+    "Color Trigger": {
+        "red": ["int", 7],
+        "green": ["int", 8],
+        "blue": ["int", 9],
+        "opacity": ["float", 35],
+        "blending": ["bool", 17],
+        "player color 1": ["bool", 15],
+        "player color 2": ["bool", 16],
+        "target color": ["int", 23]
+    },
+
+    "Collectible": {
+        "particle": ["int", 440],
+        "points": ["int", 383],
+
+        "toggle trigger": ["bool", 382],
+        "group id": ["int", 51],
+        "enable group": ["float", 56],
+
+        "pickup item": ["bool", 381],
+        "item id": ["int", 80],
+        "sub count": ["bool", 78],
+
+        "no anim": ["bool", 463]
+    },
+
+    "Rotating Objects": {
+        "rotation speed": ["int", 97],
+        "disable rotation": ["bool", 98]
+    },
+    "Animated Objects": {
+        "randomize start": ["bool", 106],
+        "disable delayed loop": ["bool", 126],
+
+        "use speed": ["bool", 122],
+        "speed": ["float", 107],
+
+        "animate on trigger": ["bool", 123],
+        "only if active": ["bool", 214],
+
+        "single frame": ["int", 462],
+        "offset anim": ["bool", 592]
+    },
+
     "Move Trigger": {
         "moveX": ["int", 28],
         "moveY": ["int", 29],
-        "lockXPlayer": ["bool", 58],
+        "lock X Player": ["bool", 58],
         "modX": ["float", 143],
-        "lockYPlayer": ["bool", 50],
+        "lock Y Player": ["bool", 59],
         "modY": ["float", 144],
 
-        "lockXCamera": ["bool", 141],
-        "lockYCamera": ["bool", 142],
+        "lock X Camera": ["bool", 141],
+        "lock Y Camera": ["bool", 142],
 
         "target mode": ["bool", 100],
         "target/dir mode centerGroup": ["int", 395],
@@ -179,6 +247,41 @@
         "direction mode distance": ["int", 396],
 
         "silent": ["bool", 544]
+    },
+    "Pulse Trigger": {
+        "target channel/id": ["int", 51],
+        "target type": ["bool", 52],
+        "exclusive": ["bool", 86],
+        "main only": ["bool", 65],
+        "detail only": ["bool", 66],
+
+        "fade im": ["bool", 45],
+        "hold": ["bool", 46],
+        "fade out": ["bool", 47],
+
+        "red": ["int", 7],
+        "green": ["int", 8],
+        "blue": ["int", 9],
+
+        "hsv enabled": ["bool", 48],
+        "hsv": ["hsv string", 49],
+        "copy color id": ["int", 50]
+    },
+    "Alpha Trigger": {
+        "group id": ["int", 51],
+        "opacity": ["float", 35]
+    },
+    "Toggle Trigger": {
+        "group id": ["int", 51],
+        "activate group": ["float", 56]
+    },
+    "Shake Trigger": {
+        "strength": ["float", 75],
+        "interval": ["float", 84]
+    },
+    "Animate Trigger": {
+        "target id": ["int", 51],
+        "animation id": ["int", 76]
     },
     "Spawn Trigger": {
         "target id": ["int", 51],

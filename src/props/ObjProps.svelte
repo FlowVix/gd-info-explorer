@@ -101,7 +101,7 @@
         <div class="h-full flex-[2]">Property</div>
         <div class="h-full flex-1 text-blue-200">Value type</div>
         <div class="h-full flex-1 text-orange-200">Property ID</div>
-        <div class="h-full flex-[2] text-gray-400">Note</div>
+        <div class="h-full flex-[4] text-gray-400">Note</div>
         <!--  -->
     </div>
     {#each results as [name, v]}
@@ -129,7 +129,7 @@
                                 search={trimmedSearch}
                             />
                         </div>
-                        <div class="h-full flex-[2] text-gray-400">
+                        <div class="h-full flex-[4] text-gray-400">
                             {note ?? ""}
                         </div>
                         <!--  -->
