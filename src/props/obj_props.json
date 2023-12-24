@@ -346,7 +346,7 @@
     "Stop Trigger": {
         "target ID": ["int", 51],
         "use control id": ["bool", 535],
-        "stop/pause/resume": ["int ∈ [0, 2]", 101]
+        "stop/pause/resume": ["int ∈ [0, 2]", 580]
     },
     "Keyframe Anim Trigger": {
         "animation group id": ["int", 76],
