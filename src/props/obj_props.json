@@ -693,6 +693,7 @@
     },
 
     "Static Camera Trigger": {
+        "target group id": ["int", 71],
         "follow": ["bool", 212],
         "follow easing": ["float", 213],
         "smooth velocity": ["bool", 453],
