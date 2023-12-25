@@ -255,9 +255,9 @@
         "main only": ["bool", 65],
         "detail only": ["bool", 66],
 
-        "fade im": ["bool", 45],
-        "hold": ["bool", 46],
-        "fade out": ["bool", 47],
+        "fade in": ["float", 45],
+        "hold": ["float", 46],
+        "fade out": ["float", 47],
 
         "red": ["int", 7],
         "green": ["int", 8],
