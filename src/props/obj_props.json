@@ -249,7 +249,7 @@
         "silent": ["bool", 544]
     },
     "Pulse Trigger": {
-        "target channel/id": ["int", 51],
+        "target channel id": ["int", 51],
         "target type": ["bool", 52],
         "exclusive": ["bool", 86],
         "main only": ["bool", 65],
