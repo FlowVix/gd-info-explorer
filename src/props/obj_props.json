@@ -139,7 +139,9 @@
         "reverse": ["bool", 117],
 
         "enter channel": ["int", 343],
-        "material": ["int", 446]
+        "material": ["int", 446],
+
+        "control id": ["int", 534]
     },
 
     "Misc": {
