@@ -248,7 +248,10 @@
         "direction mode": ["bool", 394],
         "direction mode distance": ["int", 396],
 
-        "silent": ["bool", 544]
+        "silent": ["bool", 544],
+
+        "dynamic mode": ["bool", 397],
+        "small step": ["bool", 393]
     },
     "Pulse Trigger": {
         "target channel id": ["int", 51],
