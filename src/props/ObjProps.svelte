@@ -68,9 +68,8 @@
 
 <!-- <button>gaga</button> -->
 <span class="text-2xl text-red-400 drop-shadow-md"
-    >This is still very much a work in progress! 2.2 has just been released so
-    I'm still finding property ids. If you find any mistakes, let me know on
-    GitHub!</span
+    >This is still a work in progress! Main things missing are related to shader
+    triggers. If you find any mistakes, let me know on GitHub!</span
 >
 <span class="text-orange-200">Found {FOUND_PROPS} prop ids so far.</span>
 <br />
