@@ -226,6 +226,8 @@
     },
 
     "Move Trigger": {
+        "target group": ["int", 51],
+
         "moveX": ["int", 28],
         "moveY": ["int", 29],
         "lock X Player": ["bool", 58],
@@ -254,7 +256,7 @@
         "small step": ["bool", 393]
     },
     "Pulse Trigger": {
-        "target channel id": ["int", 51],
+        "target id": ["int", 51],
         "target type": ["bool", 52],
         "exclusive": ["bool", 86],
         "main only": ["bool", 65],
