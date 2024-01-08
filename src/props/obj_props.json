@@ -82,6 +82,11 @@
 
         "color 1": ["int", 21],
         "color 2": ["int", 22],
+        "single_color_type": [
+            "int ∈ [0, 2]",
+            497,
+            "that settings icon at the top of edit object that changes if single color objects are treated as base or detail"
+        ],
 
         "color 1 hsv enabled": ["bool", 41],
         "color 1 hsv": ["hsv string", 43],
@@ -146,6 +151,13 @@
 
     "Misc": {
         "orange teleportation portal distance": ["float", 54]
+    },
+    "Dash Orb": {
+        "speed": ["float", 586],
+        "end boost": ["float", 588],
+        "max duration": ["float", 590],
+        "allow collide": ["float", 587],
+        "stop slide": ["float", 589]
     },
 
     "Trigger Common": {
