@@ -156,8 +156,8 @@
         "speed": ["float", 586],
         "end boost": ["float", 588],
         "max duration": ["float", 590],
-        "allow collide": ["float", 587],
-        "stop slide": ["float", 589]
+        "allow collide": ["bool", 587],
+        "stop slide": ["bool", 589]
     },
 
     "Trigger Common": {
