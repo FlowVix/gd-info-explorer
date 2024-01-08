@@ -230,6 +230,8 @@
         "use speed": ["bool", 122],
         "speed": ["float", 107],
 
+        "disable animshine": ["bool", 127],
+
         "animate on trigger": ["bool", 123],
         "only if active": ["bool", 214],
 
