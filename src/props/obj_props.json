@@ -769,6 +769,33 @@
         "song": ["int", 392]
     },
 
+    "Edit Song Trigger": {
+        "stop": ["bool", 417],
+        "stop loop": ["bool", 414],
+
+        "speed": ["int", 404],
+        "change speed": ["bool", 419],
+        "volume": ["float", 406],
+        "change volume": ["bool", 418],
+
+        "volume near": ["float", 421],
+        "min distance": ["float", 424],
+        "volume med": ["float", 422],
+        "dist 2": ["float", 425],
+        "volume far": ["float", 423],
+        "dist 3": ["float", 426],
+
+        "prox around group": ["int", 51],
+        "prox follow group": ["int", 71],
+
+        "follow player 1": ["bool", 138],
+        "follow player 2": ["bool", 200],
+        "follow camera": ["bool", 428],
+
+        "channel": ["int", 432],
+        "dir buttons": ["int ∈ [0, 6]", 458, "outwards, horizontal both, horizontal left, horizontal right, vertical both, vertical up, vertical down"]
+    },
+
     "Pickup Trigger": {
         "item id": ["int", 80],
         "count": ["int", 77],
