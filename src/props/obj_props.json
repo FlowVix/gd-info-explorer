@@ -1042,6 +1042,27 @@
         "P2": ["bool", 200],
         "PT": ["bool", 201]
     },
+    "Teleport Trigger": {
+        "target id": ["int", 51],
+
+        "gravity": ["int ∈ [0, 3]", 354, "no change, normal, flipped, toggle"],
+        "smooth ease": ["bool", 55],
+        "save offset": ["bool", 351],
+        "ignore x": ["bool", 352],
+        "ignore y": ["bool", 453],
+        "instant camera": ["bool", 464],
+        "snap ground": ["bool", 510],
+        "redirect dash": ["bool", 591],
+    
+        "rotate static enable": ["bool", 345],
+        "rotate static force": ["float", 346],
+        "rotate static additive": ["bool", 443],
+    
+        "rotate redirect enable": ["bool", 347],
+        "rotate redirect min": ["float", 348],
+        "rotate redirect max": ["float", 349],
+        "rotate redirect mod": ["float", 350]
+    },
     "Player Control Trigger": {
         "P1": ["bool", 138],
         "P2": ["bool", 200],
