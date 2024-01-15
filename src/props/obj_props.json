@@ -768,6 +768,57 @@
         "load prep": ["bool", 400],
         "song": ["int", 392]
     },
+    "SFX Trigger": {
+        "sfx id": ["int", 392],
+        "sound duration": [
+            "float",
+            490,
+            "affected by changing sfx, speed, start/end"
+        ],
+
+        "speed": ["int", 404],
+        "pitch": ["int", 405],
+        "volume": ["float", 406],
+
+        "reverb": ["bool", 407],
+        "reverb type": ["int ∈ [0, 22]", 502],
+        "reverb enable": ["bool", 503],
+
+        "FFT": ["bool", 412],
+        "loop": ["bool", 413],
+        "pre load": ["bool", 433],
+
+        "start": ["int", 408],
+        "end": ["int", 410],
+        "fade in": ["int", 409],
+        "fade out": ["int", 411],
+
+        "unique id": ["int", 416],
+        "SFX group": ["int", 455],
+
+        "is unique": ["bool", 415],
+        "override": ["bool", 420],
+
+        "min interval": ["float", 434],
+        "ignore volume test": ["bool", 489],
+
+        "group id 1": ["int", 51],
+        "group id 2": ["int", 71],
+
+        "P1": ["bool", 138],
+        "P2": ["bool", 200],
+        "CAM": ["bool", 428],
+
+        "vol near": ["float", 421],
+        "vol med": ["float", 422],
+        "vol far": ["float", 423],
+
+        "min dist": ["int", 424],
+        "dist 2": ["int", 425],
+        "dist 3": ["int", 426],
+
+        "dir buttons": ["int ∈ [0, 6]", 458]
+    },
 
     "Pickup Trigger": {
         "item id": ["int", 80],
