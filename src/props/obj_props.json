@@ -210,7 +210,7 @@
 
         "toggle trigger": ["bool", 382],
         "group id": ["int", 51],
-        "enable group": ["float", 56],
+        "enable group": ["bool", 56],
 
         "pickup item": ["bool", 381],
         "item id": ["int", 80],
@@ -294,7 +294,7 @@
     },
     "Toggle Trigger": {
         "group id": ["int", 51],
-        "activate group": ["float", 56]
+        "activate group": ["bool", 56]
     },
     "Shake Trigger": {
         "strength": ["float", 75],
