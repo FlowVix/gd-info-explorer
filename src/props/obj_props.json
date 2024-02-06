@@ -68,8 +68,8 @@
 
     "Object Common": {
         "id": ["int", 1],
-        "x": ["int", 2],
-        "y": ["int", 3],
+        "x": ["float", 2],
+        "y": ["float", 3],
         "flip horiz": ["bool", 4],
         "flip vert": ["bool", 5],
         "rotation": ["float", 6],
