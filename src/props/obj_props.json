@@ -40,7 +40,7 @@
 
         "priority": ["int", 341],
 
-        "center P1/P2/C/.../TR": ["int ∈ [-11, 0]", 341]
+        "center P1/P2/C/.../TR": ["int ∈ [-11, 0]", 538]
     },
     "$EDIT AREA TRIGGER COMMON": {
         "$INCLUDE": [
