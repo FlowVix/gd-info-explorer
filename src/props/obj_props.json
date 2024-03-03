@@ -527,6 +527,11 @@
         "close loop": ["bool", 376],
 
         "anim id?": ["int", 373],
+        "order index": [
+            "int",
+            374,
+            "the order of the keyframe in its respective animation"
+        ],
 
         "line opacity": ["float", 524]
     },
