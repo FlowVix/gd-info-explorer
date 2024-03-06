@@ -825,6 +825,33 @@
         "dir buttons": ["int ∈ [0, 6]", 458]
     },
 
+    "Edit Song Trigger": {
+        "stop": ["bool", 417],
+        "stop loop": ["bool", 414],
+
+        "speed": ["int", 404],
+        "change speed": ["bool", 419],
+        "volume": ["float", 406],
+        "change volume": ["bool", 418],
+
+        "volume near": ["float", 421],
+        "min distance": ["float", 424],
+        "volume med": ["float", 422],
+        "dist 2": ["float", 425],
+        "volume far": ["float", 423],
+        "dist 3": ["float", 426],
+
+        "prox around group": ["int", 51],
+        "prox follow group": ["int", 71],
+
+        "follow player 1": ["bool", 138],
+        "follow player 2": ["bool", 200],
+        "follow camera": ["bool", 428],
+
+        "channel": ["int", 432],
+        "dir buttons": ["int ∈ [0, 6]", 458, "outwards, horizontal both, horizontal left, horizontal right, vertical both, vertical up, vertical down"]
+    },
+
     "Pickup Trigger": {
         "item id": ["int", 80],
         "count": ["int", 77],
@@ -1070,6 +1097,27 @@
         "P1": ["bool", 138],
         "P2": ["bool", 200],
         "PT": ["bool", 201]
+    },
+    "Teleport Trigger": {
+        "target id": ["int", 51],
+
+        "gravity": ["int ∈ [0, 3]", 354, "no change, normal, flipped, toggle"],
+        "smooth ease": ["bool", 55],
+        "save offset": ["bool", 351],
+        "ignore x": ["bool", 352],
+        "ignore y": ["bool", 453],
+        "instant camera": ["bool", 464],
+        "snap ground": ["bool", 510],
+        "redirect dash": ["bool", 591],
+    
+        "rotate static enable": ["bool", 345],
+        "rotate static force": ["float", 346],
+        "rotate static additive": ["bool", 443],
+    
+        "rotate redirect enable": ["bool", 347],
+        "rotate redirect min": ["float", 348],
+        "rotate redirect max": ["float", 349],
+        "rotate redirect mod": ["float", 350]
     },
     "Player Control Trigger": {
         "P1": ["bool", 138],
