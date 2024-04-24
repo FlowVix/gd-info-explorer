@@ -63,7 +63,12 @@
         ],
 
         "group/effect id": ["int", 51],
-        "use eid": ["bool", 355]
+        "use eid": ["bool", 355],
+        "edit area triggers": [
+            "float",
+            285,
+            "on all edit area triggers, defaults to -99, unused"
+        ]
     },
 
     "Object Common": {
@@ -96,9 +101,13 @@
         "groups": [
             "string",
             57,
-            "period separated list, includes the pink groups"
+            "period separated list, includes the group parent ids"
         ],
-        "pink groups": ["string", 274, "period separated list"],
+        "group parent ids": [
+            "string", 
+            274, 
+            "period separated list, this is the pink groups"
+        ],
 
         "editor layer": ["int", 20],
         "editor layer 2": ["int", 61],
@@ -286,7 +295,8 @@
 
         "hsv enabled": ["bool", 48],
         "hsv": ["hsv string", 49],
-        "copy color id": ["int", 50]
+        "copy color id": ["int", 50],
+        "static hsv off": ["bool", 210]
     },
     "Alpha Trigger": {
         "group id": ["int", 51],
@@ -924,10 +934,15 @@
 
     "Sequence Trigger": {
         "sequence": ["string", 435, "period separated, similar to spawn remap"],
+        "mode": ["int ∈ [0, 2]", 436],
         "min int": ["float", 437],
         "reset": ["float", 438],
-        "mode": ["int ∈ [0, 2]", 438],
-        "reset full/step": ["bool", 439]
+        "reset full/step": ["bool", 439],
+        "sequence trigger": [
+            "bool",
+            505,
+            "on sequence triggers, unused"
+        ]
     },
 
     "Spawn Particle Trigger": {
@@ -1079,5 +1094,152 @@
         "stop move": ["bool", 541],
         "stop rot": ["bool", 542],
         "stop slide": ["bool", 543]
+    },
+    "Teleport Trigger": {
+        "smooth ease":["bool", 55],
+        "static force": ["bool", 345],
+        "static force additive": ["bool", 443],
+        "redirect force": ["bool", 347],
+        "redirect force min": ["float", 348],
+        "redirect force max": ["float", 349],
+        "redirect force mod": [
+            "float", 
+            350,
+            "default on trigger"
+        ],
+        "teleport force": ["float", 346],
+        "save offset": ["bool", 351],
+        "ignore x": ["bool", 352],
+        "ignore y": ["bool", 353],
+        "exit gravity": ["int ∈ [1, 3]", 354],
+        "instant camera": ["bool", 464],
+        "snap ground": ["bool", 510],
+        "redirect dash": ["bool", 591]
+    },
+    "Shader Triggers": {
+        "no player particles": [
+            "bool",
+            188,
+            "also target / use x / uselum"
+        ],
+        "shader target follow": [
+            "bool",
+            190,
+            "also use y / use tint channel"
+        ],
+        "disable all": ["bool", 192],
+        "lowest layer": ["int ∈ [1 to 15]", 196],
+        "highest layer": ["int ∈ [1 to 15]", 197],
+        "shader relative": ["bool", 514],
+        "shader invert": ["bool", 184],
+        "shader invert outer": [
+            "float",
+            191,
+            "also max slice x off / line strenght"
+        ],
+        "shader invert inner": ["float", 183],
+        "shader screen offX": [
+            "float",
+            290,
+            "also just screen off"
+        ],
+        "shader screen offY": ["float", 291],
+        "shader speed": ["float", 175],
+        "shader strenght": [
+            "float",
+            176,
+            "also intensity"
+        ],
+        "shader time off": ["float", 177],
+        "shader wave w": [
+            "float",
+            179,
+            "also slice height / line thickness / size"
+        ],
+        "shader thickness": [
+            "float",
+            180,
+            "also target x / rgb off"
+        ],
+        "shader target y": [
+            "float",
+            189,
+            "also segment h"
+        ],
+        "shader fade in": [
+            "float",
+            181,
+            "also max col x off"
+        ],
+        "shader fade out": [
+            "float",
+            182,
+            "also max col y off"
+        ],
+        "shader max size": [
+            "float",
+            512,
+            "also radius"
+        ],
+        "shader animate": ["bool", 513],
+        "shader disable": ["bool", 531],
+        "shader flip": ["bool", 185],
+        "shader rotate": ["bool", 186],
+        "shader dual": ["bool", 187],
+        "shader relative pos": [
+            "bool",
+            194,
+            "also snap grid"
+        ],
+        "shader hard edges": [
+            "bool",
+            515,
+            "also empty only"
+        ]
+    },
+    "Enter Effect Triggers": {
+        "effect only": [
+            "int ∈ [0, 2]", 
+            217, 
+            "1 enter only, 2 exit only"
+        ],
+        "enter channel": ["int", 344]
+    },
+    "Edit SFX & Song Triggers": {
+        "change volume": ["bool", 418],
+        "change speed": ["bool", 419],
+        "stop loop": ["bool", 414],
+        "sound stop": ["bool", 417],
+        "sound group id target": ["int", 457]
+    },
+    "Force Blocks": {
+        "force relative": ["bool", 528],
+        "force": ["float", 149],
+        "min force": ["float", 526],
+        "max force": ["float", 527],
+        "range": ["bool", 529],
+        "force id": ["int", 530]
+    },
+    "End Trigger": {
+        "no effects": ["bool", 460],
+        "instant": ["bool", 461],
+        "no sfx": ["bool", 487]
+    },
+    "Unknown": {
+        "155 load order?": [
+            "int",
+            155,
+            "its on everything, BUT putting 6 saws in a row it counts up????, might be smth like load order for animated objects"
+        ],
+        "156 saw order?": [
+            "int",
+            156,
+            "its on saws idk, it does count up as saws are placed"
+        ],
+        "36 is trigger?": [
+            "bool",
+            36, 
+            "on triggers?"
+        ]
     }
 }
