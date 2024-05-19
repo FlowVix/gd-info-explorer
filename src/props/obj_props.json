@@ -77,8 +77,8 @@
         "scale X": ["float", 128],
         "scale Y": ["float", 129],
 
-        "warp Y angle": ["float", 131],
-        "warp X angle": ["float", 132],
+        "warp y": ["float", 131],
+        "warp x": ["float", 132],
 
         "color 1": ["int", 21],
         "color 2": ["int", 22],
