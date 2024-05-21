@@ -167,7 +167,7 @@
     },
 
     "Trigger Common": {
-        "duration": ["float", 10],
+        "duration": ["float", 10, "also called fade time in several places"],
 
         "spawn triggered": ["bool", 62],
         "touch triggered": ["bool", 11],
@@ -1106,42 +1106,209 @@
         "snap ground": ["bool", 510],
         "redirect dash": ["bool", 591]
     },
-    "Shader Triggers": {
-        "no player particles": ["bool", 188, "also target / use x / uselum"],
-        "shader target follow": ["bool", 190, "also use y / use tint channel"],
+
+    "Shader Trigger": {
         "disable all": ["bool", 192],
-        "lowest layer": ["int ∈ [1 to 15]", 196],
-        "highest layer": ["int ∈ [1 to 15]", 197],
-        "shader relative": ["bool", 514],
-        "shader invert": ["bool", 184],
-        "shader invert outer": [
-            "float",
-            191,
-            "also max slice x off / line strength"
-        ],
-        "shader invert inner": ["float", 183],
-        "shader screen offX": ["float", 290, "also just screen off"],
-        "shader screen offY": ["float", 291],
-        "shader speed": ["float", 175],
-        "shader strength": ["float", 176, "also intensity"],
-        "shader time off": ["float", 177],
-        "shader wave w": [
-            "float",
-            179,
-            "also slice height / line thickness / size"
-        ],
-        "shader thickness": ["float", 180, "also target x / rgb off"],
-        "shader target y": ["float", 189, "also segment h"],
-        "shader fade in": ["float", 181, "also max col x off"],
-        "shader fade out": ["float", 182, "also max col y off"],
-        "shader max size": ["float", 512, "also radius"],
-        "shader animate": ["bool", 513],
-        "shader disable": ["bool", 531],
-        "shader flip": ["bool", 185],
-        "shader rotate": ["bool", 186],
-        "shader dual": ["bool", 187],
-        "shader relative pos": ["bool", 194, "also snap grid"],
-        "shader hard edges": ["bool", 515, "also empty only"]
+        "no player particles": ["bool", 188],
+        "lowest layer": ["int ∈ [1, 15]", 196],
+        "highest layer": ["int ∈ [1, 15]", 197]
+    },
+
+    "Shader Trigger Common": {
+        "relative": ["bool", 514],
+
+        "animate": ["bool", 513],
+
+        "shader disable": ["bool", 531]
+    },
+
+    "Shockwave Shader Trigger": {
+        "speed": ["float", 175],
+        "strength": ["float", 176],
+        "thickness": ["float", 180],
+        "wave w": ["float", 179],
+        "fade in": ["float", 181],
+        "fade out": ["float", 182],
+        "time off": ["float", 177],
+        "max size": ["float", 512],
+
+        "screen offX": ["float", 290],
+        "screen offY": ["float", 291],
+
+        "invert": ["bool", 184],
+        "inner": ["float", 183],
+        "outer": ["float", 191],
+
+        "target": ["bool", 188],
+        "center id": ["int", 51],
+        "P1": ["bool", 138],
+        "P2": ["bool", 200],
+        "follow": ["bool", 190]
+    },
+    "Shock Line Shader Trigger": {
+        "speed": ["float", 175],
+        "strength": ["float", 176],
+        "thickness": ["float", 180],
+        "wave w": ["float", 179],
+        "fade in": ["float", 181],
+        "fade out": ["float", 182],
+        "time off": ["float", 177],
+        "max size": ["float", 512],
+
+        "screen off": ["float", 290],
+
+        "invert": ["bool", 184],
+        "flip": ["bool", 185],
+        "rotate": ["bool", 186],
+        "dual": ["bool", 187],
+
+        "target": ["bool", 188],
+        "center id": ["int", 51],
+        "P1": ["bool", 138],
+        "P2": ["bool", 200],
+        "follow": ["bool", 190]
+    },
+    "Glitch Shader Trigger": {
+        "strength": ["float", 176],
+        "speed": ["float", 175],
+        "slice height": ["float", 179],
+        "max slice x off": ["float", 191],
+        "max col x off": ["float", 181],
+        "max col y off": ["float", 182]
+    },
+    "Chromatic Shader Trigger": {
+        "target X": ["float", 180],
+        "target Y": ["float", 189],
+        "use X": ["bool", 188],
+        "use Y": ["bool", 190]
+    },
+    "Chroma Glitch Shader Trigger": {
+        "speed": ["float", 175],
+        "rgb off": ["float", 180],
+        "strength": ["float", 176],
+        "line thickness": ["float", 179],
+        "segment h": ["float", 189],
+        "line strength": ["float", 191],
+
+        "disable": ["bool", 192],
+        "relative pos": ["bool", 194]
+    },
+    "Pixelate Shader Trigger": {
+        "target X": ["float", 180],
+        "target Y": ["float", 189],
+        "use X": ["bool", 188],
+        "use Y": ["bool", 190],
+
+        "snap grid": ["bool", 194],
+        "hard edges": ["bool", 515]
+    },
+    "Lens Circle Shader Trigger": {
+        "size": ["float", 179],
+        "fade": ["float", 181],
+        "strength": ["float", 176],
+        "screen offX": ["float", 290],
+        "screen offY": ["float", 291],
+
+        "center id": ["int", 51],
+        "P1": ["bool", 138],
+        "P2": ["bool", 200],
+
+        "tint channel": ["int", 71]
+    },
+    "Radial Blur Shader Trigger": {
+        "size": ["float", 179],
+        "intensity": ["float", 176],
+        "ref channel": ["int", 71],
+
+        "screen offX": ["float", 290],
+        "screen offY": ["float", 291],
+        "fade": ["float", 181],
+
+        "target": ["bool", 188],
+        "center id": ["int", 51],
+        "P1": ["bool", 138],
+        "P2": ["bool", 200],
+
+        "empty only": ["bool", 515]
+    },
+    "Motion Blur Shader Trigger": {
+        "target X": ["float", 180],
+        "target Y": ["float", 189],
+
+        "ref channel": ["int", 71],
+
+        "fade": ["float", 181],
+        "intensity": ["float", 176],
+
+        "follow ease": ["float", 191],
+
+        "use X": ["bool", 188],
+        "use Y": ["bool", 190],
+
+        "empty only": ["bool", 515],
+        "dual dir": ["bool", 194],
+
+        "target id": ["int", 71],
+
+        "P1": ["bool", 138],
+        "P2": ["bool", 200],
+        "C": ["bool", 201]
+    },
+    "Bulge Shader Trigger": {
+        "bulge": ["float", 176],
+        "radius": ["float", 180],
+
+        "screen off X": ["float", 290],
+        "screen off Y": ["float", 291],
+
+        "target": ["bool", 188],
+        "center id": ["int", 51],
+        "P1": ["bool", 138],
+        "P2": ["bool", 200]
+    },
+    "Pinch Shader Trigger": {
+        "target X": ["float", 180],
+        "target Y": ["float", 189],
+
+        "screen off X": ["float", 290],
+        "screen off Y": ["float", 291],
+
+        "radius": ["float", 512],
+        "modifier": ["float", 179],
+
+        "use X": ["bool", 190],
+        "use Y": ["bool", 194]
+    },
+    "Grayscale Shader Trigger": {
+        "target": ["float", 176],
+        "tint channel": ["int", 51],
+        "tint channel checkbox": ["bool", 190],
+
+        "use lum": ["bool", 188]
+    },
+    "Sepia Shader Trigger": {
+        "target": ["float", 176]
+    },
+    "Invert Color Shader Trigger": {
+        "target": ["float", 176],
+        "r": ["float", 179],
+        "g": ["float", 180],
+        "b": ["float", 189],
+
+        "edit rgb": ["bool", 188],
+        "tween rgb": ["bool", 190],
+        "clamp rgb": ["bool", 194]
+    },
+    "Hue Shader Trigger": {
+        "degrees": ["float", 176]
+    },
+    "Edit Color Trigger / Brightness Contrast Trigger": {
+        "cr": ["float", 176],
+        "cg": ["float", 191],
+        "cb": ["float", 175],
+        "br": ["float", 179],
+        "bg": ["float", 180],
+        "bb": ["float", 189]
     },
 
     "Enter Effect Triggers": {
