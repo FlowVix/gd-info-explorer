@@ -64,11 +64,8 @@
 
         "group/effect id": ["int", 51],
         "use eid": ["bool", 355],
-        "edit area triggers": [
-            "float",
-            285,
-            "on all edit area triggers, defaults to -99, unused"
-        ]
+
+        "UNKNOWN": ["float", 285, "defaults to -99"]
     },
 
     "Object Common": {
@@ -104,9 +101,9 @@
             "period separated list, includes the group parent ids"
         ],
         "group parent ids": [
-            "string", 
-            274, 
-            "period separated list, this is the pink groups"
+            "string",
+            274,
+            "period separated list, these are the pink groups"
         ],
 
         "editor layer": ["int", 20],
@@ -938,11 +935,7 @@
         "min int": ["float", 437],
         "reset": ["float", 438],
         "reset full/step": ["bool", 439],
-        "sequence trigger": [
-            "bool",
-            505,
-            "on sequence triggers, unused"
-        ]
+        "UNKNOWN": ["bool", 505]
     },
 
     "Spawn Particle Trigger": {
@@ -1096,37 +1089,26 @@
         "stop slide": ["bool", 543]
     },
     "Teleport Trigger": {
-        "smooth ease":["bool", 55],
+        "target group id": ["int", 51],
+        "smooth ease": ["bool", 55],
         "static force": ["bool", 345],
         "static force additive": ["bool", 443],
         "redirect force": ["bool", 347],
         "redirect force min": ["float", 348],
         "redirect force max": ["float", 349],
-        "redirect force mod": [
-            "float", 
-            350,
-            "default on trigger"
-        ],
-        "teleport force": ["float", 346],
+        "redirect force mod": ["float", 350, "default on trigger"],
+        "static force value": ["float", 346],
         "save offset": ["bool", 351],
         "ignore x": ["bool", 352],
         "ignore y": ["bool", 353],
-        "exit gravity": ["int ∈ [1, 3]", 354],
+        "exit gravity": ["int ∈ [0, 3]", 354],
         "instant camera": ["bool", 464],
         "snap ground": ["bool", 510],
         "redirect dash": ["bool", 591]
     },
     "Shader Triggers": {
-        "no player particles": [
-            "bool",
-            188,
-            "also target / use x / uselum"
-        ],
-        "shader target follow": [
-            "bool",
-            190,
-            "also use y / use tint channel"
-        ],
+        "no player particles": ["bool", 188, "also target / use x / uselum"],
+        "shader target follow": ["bool", 190, "also use y / use tint channel"],
         "disable all": ["bool", 192],
         "lowest layer": ["int ∈ [1 to 15]", 196],
         "highest layer": ["int ∈ [1 to 15]", 197],
@@ -1135,85 +1117,98 @@
         "shader invert outer": [
             "float",
             191,
-            "also max slice x off / line strenght"
+            "also max slice x off / line strength"
         ],
         "shader invert inner": ["float", 183],
-        "shader screen offX": [
-            "float",
-            290,
-            "also just screen off"
-        ],
+        "shader screen offX": ["float", 290, "also just screen off"],
         "shader screen offY": ["float", 291],
         "shader speed": ["float", 175],
-        "shader strenght": [
-            "float",
-            176,
-            "also intensity"
-        ],
+        "shader strength": ["float", 176, "also intensity"],
         "shader time off": ["float", 177],
         "shader wave w": [
             "float",
             179,
             "also slice height / line thickness / size"
         ],
-        "shader thickness": [
-            "float",
-            180,
-            "also target x / rgb off"
-        ],
-        "shader target y": [
-            "float",
-            189,
-            "also segment h"
-        ],
-        "shader fade in": [
-            "float",
-            181,
-            "also max col x off"
-        ],
-        "shader fade out": [
-            "float",
-            182,
-            "also max col y off"
-        ],
-        "shader max size": [
-            "float",
-            512,
-            "also radius"
-        ],
+        "shader thickness": ["float", 180, "also target x / rgb off"],
+        "shader target y": ["float", 189, "also segment h"],
+        "shader fade in": ["float", 181, "also max col x off"],
+        "shader fade out": ["float", 182, "also max col y off"],
+        "shader max size": ["float", 512, "also radius"],
         "shader animate": ["bool", 513],
         "shader disable": ["bool", 531],
         "shader flip": ["bool", 185],
         "shader rotate": ["bool", 186],
         "shader dual": ["bool", 187],
-        "shader relative pos": [
-            "bool",
-            194,
-            "also snap grid"
-        ],
-        "shader hard edges": [
-            "bool",
-            515,
-            "also empty only"
-        ]
+        "shader relative pos": ["bool", 194, "also snap grid"],
+        "shader hard edges": ["bool", 515, "also empty only"]
     },
+
     "Enter Effect Triggers": {
-        "effect only": [
-            "int ∈ [0, 2]", 
-            217, 
-            "1 enter only, 2 exit only"
-        ],
-        "enter channel": ["int", 344]
+        "enter/exit only": ["int ∈ [0, 2]", 217, "1: enter only, 2: exit only"],
+        "target enter channel": ["int", 344]
     },
-    "Edit SFX & Song Triggers": {
-        "change volume": ["bool", 418],
-        "change speed": ["bool", 419],
+    "Edit Song Trigger": {
+        "channel": ["int", 432],
+        "stop": ["bool", 417],
         "stop loop": ["bool", 414],
-        "sound stop": ["bool", 417],
-        "sound group id target": ["int", 457]
+
+        "speed": ["int", 404],
+        "change speed": ["bool", 419],
+
+        "volume": ["float", 406],
+        "change volume": ["bool", 418],
+
+        "group id 1": ["int", 51],
+        "group id 2": ["int", 71],
+
+        "P1": ["bool", 138],
+        "P2": ["bool", 200],
+        "CAM": ["bool", 428],
+
+        "vol near": ["float", 421],
+        "vol med": ["float", 422],
+        "vol far": ["float", 423],
+
+        "min dist": ["int", 424],
+        "dist 2": ["int", 425],
+        "dist 3": ["int", 426],
+
+        "dir buttons": ["int ∈ [0, 6]", 458]
     },
-    "Force Blocks": {
-        "force relative": ["bool", 528],
+    "Edit SFX Trigger": {
+        "group id": ["int", 457],
+        "sfx group": ["int", 455],
+        "unique id": ["int", 416],
+
+        "stop": ["bool", 417],
+        "stop loop": ["bool", 414],
+
+        "speed": ["int", 404],
+        "change speed": ["bool", 419],
+
+        "volume": ["float", 406],
+        "change volume": ["bool", 418],
+
+        "group id 1": ["int", 51],
+        "group id 2": ["int", 71],
+
+        "P1": ["bool", 138],
+        "P2": ["bool", 200],
+        "CAM": ["bool", 428],
+
+        "vol near": ["float", 421],
+        "vol med": ["float", 422],
+        "vol far": ["float", 423],
+
+        "min dist": ["int", 424],
+        "dist 2": ["int", 425],
+        "dist 3": ["int", 426],
+
+        "dir buttons": ["int ∈ [0, 6]", 458]
+    },
+    "Force Block": {
+        "relative": ["bool", 528],
         "force": ["float", 149],
         "min force": ["float", 526],
         "max force": ["float", 527],
@@ -1221,25 +1216,10 @@
         "force id": ["int", 530]
     },
     "End Trigger": {
+        "spawn id": ["int", 51],
+        "target pos": ["int", 71],
         "no effects": ["bool", 460],
-        "instant": ["bool", 461],
-        "no sfx": ["bool", 487]
-    },
-    "Unknown": {
-        "155 load order?": [
-            "int",
-            155,
-            "its on everything, BUT putting 6 saws in a row it counts up????, might be smth like load order for animated objects"
-        ],
-        "156 saw order?": [
-            "int",
-            156,
-            "its on saws idk, it does count up as saws are placed"
-        ],
-        "36 is trigger?": [
-            "bool",
-            36, 
-            "on triggers?"
-        ]
+        "instant": ["bool", 487],
+        "no sfx": ["bool", 461]
     }
 }
