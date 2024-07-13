@@ -82,6 +82,7 @@
         "warp Y angle": ["float", 131],
         "warp X angle": ["float", 132],
 
+        "1.9 color channel": ["int", 19],
         "color 1": ["int", 21],
         "color 2": ["int", 22],
         "single_color_type": [
@@ -1388,5 +1389,8 @@
         "no effects": ["bool", 460],
         "instant": ["bool", 487],
         "no sfx": ["bool", 461]
+    },
+    "Secret Coin": {
+        "coin id": ["int", 12]
     }
 }
