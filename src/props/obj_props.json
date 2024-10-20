@@ -209,7 +209,15 @@
         "blending": ["bool", 17],
         "player color 1": ["bool", 15],
         "player color 2": ["bool", 16],
-        "target color": ["int", 23]
+        "target color": ["int", 23],
+        "copy color id": ["int", 50],
+        "legacy hsv off": ["bool", 210],
+        "hsv": ["hsv string", 49],
+        "copy opacity": ["bool", 60]
+    },
+
+    "Background Color Trigger": {
+        "tint ground": ["bool", 14]
     },
 
     "Collectible": {
