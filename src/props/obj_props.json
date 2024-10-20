@@ -1394,5 +1394,10 @@
     },
     "Secret Coin": {
         "coin id": ["int", 12]
+    },
+    "Old End Trigger": {
+        "group id": ["int", 51],
+        "lock y": ["bool", 59],
+        "reversed": ["bool", 118]
     }
 }
