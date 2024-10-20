@@ -82,7 +82,7 @@
         "warp Y angle": ["float", 131],
         "warp X angle": ["float", 132],
 
-        "1.9 color channel": ["int", 19],
+        "1.9 color channel": ["int ∈ [0, 8]", 19],
         "color 1": ["int", 21],
         "color 2": ["int", 22],
         "single_color_type": [
