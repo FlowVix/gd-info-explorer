@@ -96,6 +96,7 @@
         "color 2 hsv enabled": ["bool", 42],
         "color 2 hsv": ["hsv string", 44],
 
+        "single group": ["int", 33],
         "groups": [
             "string",
             57,
@@ -1049,7 +1050,8 @@
         "activate group": ["bool", 56],
         "claim touch": ["bool", 445],
         "spawn only": ["bool", 504],
-        "multi activate": ["bool", 99]
+        "multi activate (classic)": ["bool", 99],
+        "no multi activate (platformer)": ["bool", 444]
     },
 
     "Options Trigger": {
