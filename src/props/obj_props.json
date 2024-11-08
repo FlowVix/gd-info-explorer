@@ -788,7 +788,8 @@
 
         "prep": ["bool", 399],
         "load prep": ["bool", 400],
-        "song": ["int", 392]
+        "song": ["int", 392],
+        "dont reset": ["bool", 595]
     },
     "SFX Trigger": {
         "sfx id": ["int", 392],
