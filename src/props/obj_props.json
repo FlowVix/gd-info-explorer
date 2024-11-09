@@ -82,6 +82,7 @@
         "warp Y angle": ["float", 131],
         "warp X angle": ["float", 132],
 
+        "1.9 color channel": ["int ∈ [0, 8]", 19],
         "color 1": ["int", 21],
         "color 2": ["int", 22],
         "single_color_type": [
@@ -95,6 +96,7 @@
         "color 2 hsv enabled": ["bool", 42],
         "color 2 hsv": ["hsv string", 44],
 
+        "single group": ["int", 33],
         "groups": [
             "string",
             57,
@@ -207,7 +209,15 @@
         "blending": ["bool", 17],
         "player color 1": ["bool", 15],
         "player color 2": ["bool", 16],
-        "target color": ["int", 23]
+        "target color": ["int", 23],
+        "copy color id": ["int", 50],
+        "legacy hsv off": ["bool", 210],
+        "hsv": ["hsv string", 49],
+        "copy opacity": ["bool", 60]
+    },
+
+    "Background Color Trigger": {
+        "tint ground": ["bool", 14]
     },
 
     "Collectible": {
@@ -778,7 +788,8 @@
 
         "prep": ["bool", 399],
         "load prep": ["bool", 400],
-        "song": ["int", 392]
+        "song": ["int", 392],
+        "dont reset": ["bool", 595]
     },
     "SFX Trigger": {
         "sfx id": ["int", 392],
@@ -1048,7 +1059,8 @@
         "activate group": ["bool", 56],
         "claim touch": ["bool", 445],
         "spawn only": ["bool", 504],
-        "multi activate": ["bool", 99]
+        "multi activate (classic)": ["bool", 99],
+        "no multi activate (platformer)": ["bool", 444]
     },
 
     "Options Trigger": {
@@ -1388,5 +1400,13 @@
         "no effects": ["bool", 460],
         "instant": ["bool", 487],
         "no sfx": ["bool", 461]
+    },
+    "Secret Coin": {
+        "coin id": ["int", 12]
+    },
+    "Old End Trigger": {
+        "group id": ["int", 51],
+        "lock Y": ["bool", 59],
+        "reversed": ["bool", 118]
     }
 }
