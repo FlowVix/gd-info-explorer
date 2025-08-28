@@ -30,8 +30,6 @@
         ],
 
         "DE AP": ["bool", 539],
-        "ignore linked": ["bool", 281],
-        "ignore gparent": ["bool", 280],
 
         "effect id": ["int", 225],
 
@@ -96,6 +94,9 @@
         "color 2 hsv enabled": ["bool", 42],
         "color 2 hsv": ["hsv string", 44],
 
+        "color 1 index": ["int", 155],
+        "color 2 index": ["int", 156],
+
         "single group": ["int", 33],
         "groups": [
             "string",
@@ -123,7 +124,9 @@
             "int",
             108,
             "the id of the editor link group this object is in (link controls)"
-        ]
+        ],
+
+        "interactible": ["bool", 36]
     },
     "Object Extra": {
         "don't fade": ["bool", 64],
@@ -176,7 +179,10 @@
         "multi triggered": ["bool", 87],
 
         "easing": ["int ∈ [0, 18]", 30],
-        "easing rate": ["float", 85]
+        "easing rate": ["float", 85],
+
+        "ignore linked": ["bool", 281],
+        "ignore gparent": ["bool", 280]
     },
 
     "Custom Particles": {
@@ -840,7 +846,12 @@
         "dist 2": ["int", 425],
         "dist 3": ["int", 426],
 
-        "dir buttons": ["int ∈ [0, 6]", 458]
+        "dir buttons": ["int ∈ [0, 6]", 458],
+
+        "speed +-": ["int", 596],
+        "pitch +-": ["int", 597],
+        "volume +-": ["int", 598],
+        "pitch steps": ["bool", 599]
     },
 
     "Pickup Trigger": {
@@ -1076,6 +1087,7 @@
         "audio on death": ["int ∈ [-1, 1]", 575],
         "no death sfx": ["int ∈ [-1, 1]", 576],
         "edit respawn time": ["int ∈ [-1, 1]", 573],
+        "boost slide": ["int ∈ [-1, 1]", 593],
         "respawn time": ["float", 574]
     },
 
@@ -1408,5 +1420,21 @@
         "group id": ["int", 51],
         "lock Y": ["bool", 59],
         "reversed": ["bool", 118]
+    },
+    "Tileset": {
+        "reference only": ["bool", 157]
+    },
+    "Checkpoint Trigger": {
+        "respawn id": ["int", 448]
+    },
+    "BPM Trigger": {
+        "bpm": ["int", 498],
+        "speed": [
+            "int ∈ [0, 4]",
+            499,
+            "0: normal, 1: yellow, 2: green, 3: pink, 4: red"
+        ],
+        "disable": ["bool", 500],
+        "bpb": ["int", 501]
     }
 }
