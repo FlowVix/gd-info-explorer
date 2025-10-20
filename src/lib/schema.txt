@@ -1,0 +1,1316 @@
+
+
+$Int # integer
+$Float # decimal floating-point
+$Bool # boolean
+$HSVString # string of the format `<h>a<s>a<b>a<s_checked>a<b_checked>` where <...> are values
+$GroupList # period separated group list
+$ParticleString # list separated by `a`, check above for properties in order
+$RemapList # period separated (group, group) list
+$AdvRandomList # period separated (group, weight) list
+$SequenceList # period separated (group, count) list
+$EventList # period separated integer group list
+
+$GroupID = Int
+$ColorID = Int
+$ItemID = Int
+$TimerID = Int
+$BlockID = Int
+$ControlID = Int
+$EffectID = Int
+$UniqueID = Int
+$SFXGroup = Int
+$ChannelID = Int
+$ForceID = Int
+
+$ColorOrGroupID = Int
+$GroupOrControlID = Int
+$GroupOrEffectID = Int
+$ItemOrTimerID = Int
+
+$Easing = {
+    none
+    ease_in_out
+    ease_in
+    ease_out
+    elastic_in_out
+    elastic_in
+    elastic_out
+    bounce_in_out
+    bounce_in
+    bounce_out
+    exponential_in_out
+    exponential_in
+    exponential_out
+    sine_in_out
+    sine_in
+    sine_out
+    back_in_out
+    back_in
+    back_out
+}
+$XYOnly = { neither x_only y_only }
+$Color1P9 = { default p1 p2 lbg col1 col2 col3 col4 dl3 }
+$SingleColorType = { default base detail }
+$TriggerLayer = {
+    bg
+    mg
+    b5
+    b4
+    b3
+    b2
+    b1
+    p
+    t1
+    t2
+    t3
+    t4
+    g
+    ui
+    max
+}
+$SoundDirs = { all left_right left right up_down down up }
+
+@Object
+x 2 Float
+y 3 Float
+flip_horiz 4 Bool
+flip_vert 5 Bool
+rotation 6 Float
+scale 32 Float
+scale_x 128 Float
+scale_y 129 Float
+warp_y_angle 131 Float
+warp_x_angle 132 Float
+color_1point9 19 Color1P9
+color_1 21 Int
+color_2 22 Int
+single_color_type 497 SingleColorType # that settings icon at the top of edit object that changes if single color objects are treated as base or detail
+color_1_hsv_enabled 41 Bool
+color_1_hsv 43 HSVString
+color_2_hsv_enabled 42 Bool
+color_2_hsv 44 HSVString
+color_1_index 155 Int
+color_2_index 156 Int
+single_group 33 Int
+groups 57 GroupList # includes the group parent ids
+parent_groups 274 GroupList # these are the pink groups
+editor_layer 20 Int
+editor_layer_2 61 Int
+z_layer 24 Int
+z_order 25 Int
+ord 115 Int
+channel 170 Int
+preview 13 Bool
+linked_group 108 Int # the id of the editor link group this object is in (link controls)
+interactible 36 Bool
+
+dont_fade 64 Bool
+dont_enter 57 Bool
+no_effects 116 Bool
+group_parent 34 Bool
+area_parent 279 Bool
+dont_boost_x 509 Bool
+dont_boost_y 496 Bool
+single_ptouch 284 Bool
+high_detail 103 Bool
+no_touch 121 Bool
+passable 134 Bool
+hide 135 Bool
+non_stick_x 136 Bool
+non_stick_y 289 Bool
+extra_sticky 495 Bool
+extended_collision 511 Bool
+center_effect 369 Bool
+ice_block 137 Bool
+grip_slope 193 Bool
+no_glow 96 Bool
+no_particle 507 Bool
+scale_stick 356 Bool
+no_audio_scale 372 Bool
+reverse 117 Bool
+enter_channel 343 Int
+material 446 Int
+control_id 534 ControlID
+
+orange_tp_portal_distance 54 Float
+
+multi_activate_classic 99 Bool
+no_multi_activate_platformer 444 Bool
+
+@DashOrb: Object
+speed 586 Float
+end_boost 588 Float
+max_duration 590 Float
+allow_collide 587 Bool
+stop_slide 589 Bool
+
+@CustomParticles: Object
+particle_data 145 ParticleString
+use_obj_color 146 Bool
+uniform_obj_color 147 Bool
+animate_on_trigger 123 Bool
+animate_active_only 214 Bool
+quick_start 211 Bool
+
+@TextObject: Object
+text 31 String
+kerning 488 Int
+
+@Collectible: Object
+particle 440 Int
+points 383 Int
+toggle_trigger 382 Bool
+group_id 51 GroupID
+enable_group 56 Bool
+pickup_item 381 Bool
+item_id 80 ItemID
+sub_count 78 Bool
+no_anim 463 Bool
+
+@RotatingObject: Object
+rotation_speed 97 Int
+disable_rotation 98 Bool
+
+@AnimatedObject: Object
+randomize_start 106 Bool
+disable_delayed_loop 126 Bool
+use_speed 122 Bool
+speed 107 Float
+disable_animshine 127 Bool
+animate_on_trigger 123 Bool
+only_if_active 214 Bool
+single_frame 462 Int
+offset_anim 592 Bool
+
+$KeyframeRotDir = { unset cw ccw }
+$KeyframeMode = { time even dist }
+
+@KeyframeObject: Object
+group_id 51 GroupID
+x360 537 Int
+spawn_gid 71 GroupID
+spawn_delay 557 Float
+curve 378 Bool
+cw_ccw 536 KeyframeRotDir
+time_even_dist 379 KeyframeMode
+prox 377 Bool
+ref_only 375 Bool
+auto_layer 459 Bool
+preview_art 380 Bool
+close_loop 376 Bool
+anim_id 373 Int
+order_index 374 Int
+line_opacity 524 Float
+
+@Trigger: Object
+spawn_triggered 62 Bool
+touch_triggered 11 Bool
+multi_triggered 87 Bool
+easing 30 Easing
+easing_rate 85 Float
+ignore_linked 281 Bool
+ignore_gparent 280 Bool
+
+@ColorTrigger: Trigger
+duration 10 Float
+red 7 Int
+green 8 Int
+blue 9 Int
+opacity 35 Float
+blending 17 Bool
+player_color_1 15 Bool
+player_color_2 16 Bool
+target_color 23 ColorID
+copy_color_id 50 ColorID
+legacy_hsv_off 210 Bool
+hsv 49 HSVString
+copy_opacity 60 Bool
+
+@BackgroundColorTrigger: Trigger
+duration 10 Float
+tint_ground 14 Bool
+
+@MoveTrigger: Trigger
+duration 10 Float
+target_group 51 GroupID
+move_x 28 Int
+move_y 29 Int
+lock_x_player 58 Bool
+lock_y_player 59 Bool
+mod_x 143 Float
+mod_y 144 Float
+lock_x_camera 141 Bool
+lock_y_camera 142 Bool
+target_mode 100 Bool
+mode_center_group 395 GroupID
+mode_target_group 71 GroupID
+mode_target_p1 138 Bool
+mode_target_p2 200 Bool
+mode_xy_only 101 XYOnly
+direction_mode 394 Bool
+direction_mode_distance 396 Int
+silent 544 Bool
+dynamic_mode 397 Bool
+small_step 393 Bool
+
+@PulseTrigger: Trigger
+target_id 51 ColorOrGroupID
+target_type 52 Bool
+exclusive 86 Bool
+main_only 65 Bool
+detail_only 66 Bool
+fade_in 45 Float
+hold 46 Float
+fade_out 47 Float
+red 7 Int
+green 8 Int
+blue 9 Int
+hsv_enabled 48 Bool
+hsv 49 HSVString
+copy_color_id 50 ColorID
+static_hsv_off 210 Bool
+
+@AlphaTrigger: Trigger
+duration 10 Float
+target_group 51 GroupID
+opacity 35 Float
+
+@ToggleTrigger: Trigger
+target_group 51 GroupID
+activate_group 56 Bool
+
+@ShakeTrigger: Trigger
+duration 10 Float
+strength 75 Float
+interval 84 Float
+
+@AnimateTrigger: Trigger
+target_group 51 GroupID
+animation_id 76 Int
+
+@SpawnTrigger: Trigger
+target_group 51 GroupID
+delay 63 Float
+delay_pm 556 Float
+preview_disable 102 Bool
+spawn_ordered 441 Bool
+reset_remap 581 Bool
+group_remaps 442 RemapList
+
+@RotateTrigger: Trigger
+duration 10 Float
+degrees 68 Float
+x360 69 Int
+target_group 51 GroupID
+center_group 71 GroupID
+aim_mode 100 Bool
+follow_mode 394 Bool
+rot_target_id 401 Int
+rot_offset 402 Float
+mode_target_p1 138 Bool
+mode_target_p2 200 Bool
+dynamic_mode 397 Bool
+dynamic_mode_easing 403 Int
+lock_obj_rot 70 Bool
+min_x_id 516 GroupID
+min_y_id 517 GroupID
+max_x_id 518 GroupID
+max_y_id 519 GroupID
+
+@ScaleTrigger: Trigger
+duration 10 Float
+scale_x 150 Float
+scale_y 151 Float
+div_x 153 Bool
+div_y 154 Bool
+target_group 51 GroupID
+center_group 71 GroupID
+only_move 133 Bool
+relative_scale 577 Bool
+relative_rot 452 Bool
+
+@FollowTrigger: Trigger
+move_time 10 Float
+x_mod 72 Float
+y_mod 73 Float
+target_group 51 GroupID
+follow_group 71 GroupID
+
+$StopMode = { stop pause resume }
+@StopTrigger: Trigger
+target_group 51 GroupOrControlID
+use_control_id 535 Bool
+stop_pause_resume 580 StopMode
+
+@KeyframeAnimTrigger: Trigger
+animation_group_id 76 GroupID
+target_group 51 GroupID
+parent_group 71 GroupID
+time_mod 520 Float
+position_x_mod 521 Float
+position_y_mod 545 Float
+rotation_mod 522 Float
+scale_x_mod 523 Float
+scale_y_mod 546 Float
+
+@FollowPlayerYTrigger: Trigger
+move_time 10 Float
+speed 90 Float
+delay 91 Float
+offset 92 Int
+max_speed 105 Float
+target_group 51 GroupID
+
+$AdvancedFollowMode = { init set add }
+$AdvancedFollowPage2Mode = { m0 m1 m2 }
+@AdvancedFollowTrigger: Trigger
+target_group 51 GroupID
+follow_group 71 GroupID
+priority 365 Int
+x_only 306 Bool
+y_only 307 Bool
+follow_p1 138 Bool
+follow_p2 200 Bool
+follow_c 201 Bool
+rot_offset 340 Int
+rot_easing 363 Int
+rot_dead_z 364 Int
+ignore_disabled 336 Bool
+rotate_dir 339 Bool
+init_set_add 572 AdvancedFollowMode
+exclusive 571 Bool
+page_2_mode 367 AdvancedFollowPage2Mode
+delay 292 Float
+delay_pm 293 Float
+max_speed 298 Float
+max_speed_pm 299 Float
+max_range 308 Int
+max_range_pm 309 Int
+max_range_unmarked 366 Int
+easing 361 Float
+easing_pm 362 Float
+start_speed 300 Float
+start_speed_pm 301 Float
+start_speed_unmarked 560 Int
+start_dir 563 Int
+start_dir_pm 564 Int
+start_dir_unmarked 565 Int
+acceleration 334 Float
+acceleration_pm 335 Float
+friction 558 Float
+friction_pm 559 Float
+near_dist 359 Float
+near_dist_pm 360 Float
+near_friction 561 Float
+near_friction_pm 562 Float
+near_accel 357 Float
+near_accel_pm 358 Float
+steer_force 316 Float
+steer_force_pm 317 Float
+steer_force_low 318 Float
+steer_force_low_pm 319 Float
+steer_force_low_checkbox 337 Bool
+speed_range_low 322 Float
+speed_range_low_pm 323 Float
+steer_force_high 320 Float
+steer_force_high_pm 321 Float
+steer_force_high_checkbox 338 Bool
+speed_range_high 324 Float
+speed_range_high_pm 325 Float
+slow_dist 359 Int
+slow_dist_pm 360 Int
+break_force 326 Float
+break_force_pm 327 Float
+break_angle 328 Int
+break_angle_pm 329 Int
+break_steer_force 330 Float
+break_steer_force_pm 331 Float
+break_steer_speed_limit 332 Float
+break_steer_speed_limit_pm 333 Float
+target_dir 305 Bool
+
+@EditAdvancedFollowTrigger: Trigger
+target_group 51 GroupOrControlID
+x_only 306 Bool
+y_only 307 Bool
+mod_x 566 Float
+mod_x_pm 567 Float
+mod_y 568 Float
+mod_y_pm 569 Float
+speed 300 Float
+speed_pm 301 Float
+speed_unmarked 560 Int
+dir 363 Int
+dir_pm 364 Int
+dir_unmarked 565 Int
+target_control_id 535 Bool
+redirect_dir 570 Bool
+
+@RetargetAdvancedFollowTrigger: Trigger
+target_group 51 GroupOrControlID
+follow_group 71 GroupID
+target_control_id 535 Bool
+follow_p1 138 Bool
+follow_p2 200 Bool
+follow_c 201 Bool
+
+$AreaDirButtonsDir = { all horiz vert }
+$AreaCenterSpecial = {
+    p1 = -1
+    p2 = -2
+    c = -3
+    bl = -4
+    cl = -5
+    tl = -6
+    bc = -7
+    tc = -8
+    br = -9
+    cr = -10
+    tr = -11
+}
+@AreaEditAreaTriggerCommon
+length 222 Int
+length_pm 223 Int
+offset 220 Int
+offset_pm 221 Int
+offset_y 252 Int
+offset_y_pm 253 Int
+mod_front 263 Float
+mod_back 264 Float
+deadzone 282 Float
+easing 242 Easing
+easing_rate 243 Float
+@AreaTrigger: AreaEditAreaTriggerCommon Trigger
+ease_out 261 Bool
+easing2 248 Easing
+easing2_rate 249 Float
+dir_buttons_dir 262 AreaDirButtonsDir
+dir_buttons_inwards 276 Bool
+dir_buttons_single_arrow 283 Bool # seems to be true when dir_buttons_dir is all
+de_ap 539 Bool
+effect_id 225 EffectID
+target_group 51 GroupID
+center_group 71 GroupID
+priority 341 Int
+center_special 538 AreaCenterSpecial
+@EditAreaTrigger: AreaEditAreaTriggerCommon Trigger
+duration 10 Float
+group_effect_id 51 GroupOrEffectID
+use_eid 255 Bool
+unknown 285 Float # defaults to -99
+
+@AreaMoveTriggerCommon
+move_dist 218 Int
+move_dist_pm 219 Int
+move_angle 231 Int
+move_angle_pm 232 Int
+rfade 288 Float
+xy_mode 241 Bool
+move_x 237 Int
+move_x_pm 238 Int
+move_y 239 Int
+move_y_pm 240 Int
+@AreaMoveTrigger: AreaMoveTriggerCommon AreaTrigger
+relative 287 Bool
+@EditAreaMoveTrigger: AreaMoveTriggerCommon EditAreaTrigger
+
+@AreaRotateTriggerCommon
+rotation 270 Float
+rotation_pm 271 Float
+@AreaRotateTrigger: AreaRotateTriggerCommon AreaTrigger
+@EditAreaRotateTrigger: AreaRotateTriggerCommon EditAreaTrigger
+
+@AreaScaleTriggerCommon
+scale_x 233 Float
+scale_x_pm 234 Float
+scale_y 235 Float
+scale_y_pm 236 Float
+@AreaScaleTrigger: AreaScaleTriggerCommon AreaTrigger
+@EditAreaScaleTrigger: AreaScaleTriggerCommon EditAreaTrigger
+
+@AreaFadeTriggerCommon
+to_opacity 275 Float
+@AreaFadeTrigger: AreaFadeTriggerCommon AreaTrigger
+from_opacity 286 Float
+@EditAreaFadeTrigger: AreaFadeTriggerCommon EditAreaTrigger
+
+@AreaTintTriggerCommon
+tint 265 Float
+hsv_on 278 Bool
+hsv 49 HSVString
+@AreaTintTrigger: AreaTintTriggerCommon AreaTrigger
+color_channel 260 ColorID
+main_only 65 Bool
+secondary_only 66 Bool
+@EditAreaTintTrigger: AreaTintTriggerCommon EditAreaTrigger
+
+@StopAreaTrigger: Trigger
+effect_id 51 Int
+
+$Background = {
+    bg1 = 1
+    bg2 = 2
+    bg3 = 3
+    bg4 = 4
+    bg5 = 5
+    bg6 = 6
+    bg7 = 7
+    bg8 = 8
+    bg9 = 9
+    bg10 = 10
+    bg11 = 11
+    bg12 = 12
+    bg13 = 13
+    bg14 = 14
+    bg15 = 15
+    bg16 = 16
+    bg17 = 17
+    bg18 = 18
+    bg19 = 19
+    bg20 = 20
+    bg21 = 21
+    bg22 = 22
+    bg23 = 23
+    bg24 = 24
+    bg25 = 25
+    bg26 = 26
+    bg27 = 27
+    bg28 = 28
+    bg29 = 29
+    bg30 = 30
+    bg31 = 31
+    bg32 = 32
+    bg33 = 33
+    bg34 = 34
+    bg35 = 35
+    bg36 = 36
+    bg37 = 37
+    bg38 = 38
+    bg39 = 39
+    bg40 = 40
+    bg41 = 41
+    bg42 = 42
+    bg43 = 43
+    bg44 = 44
+    bg45 = 45
+    bg46 = 46
+    bg47 = 47
+    bg48 = 48
+    bg49 = 49
+    bg50 = 50
+    bg51 = 51
+    bg52 = 52
+    bg53 = 53
+    bg54 = 54
+    bg55 = 55
+    bg56 = 56
+    bg57 = 57
+    bg58 = 58
+    bg59 = 59
+}
+@BackgroundTrigger: Trigger
+background 533 Background
+
+$Ground = {
+    g1 = 1
+    g2 = 2
+    g3 = 3
+    g4 = 4
+    g5 = 5
+    g6 = 6
+    g7 = 7
+    g8 = 8
+    g9 = 9
+    g10 = 10
+    g11 = 11
+    g12 = 12
+    g13 = 13
+    g14 = 14
+    g15 = 15
+    g16 = 16
+    g17 = 17
+    g18 = 18
+    g19 = 19
+    g20 = 20
+    g21 = 21
+    g22 = 22
+}
+@GroundTrigger: Trigger
+ground 533 Ground
+
+$MiddleGround = {
+    none
+    mg1
+    mg2
+    mg3
+}
+@MiddleGroundTrigger: Trigger
+middle_ground 533 MiddleGround
+
+$TouchPlayerOnly = { unset p1 p2 }
+$TouchToggle = { unset on off }
+@TouchTrigger: Trigger
+target_group 51 GroupID
+hold_mode 81 Bool
+p1_p2_only 198 TouchPlayerOnly
+toggle_on_off 82 TouchToggle
+dual_mode 89 Bool
+
+@CountTrigger: Trigger
+item_id 80 ItemID
+target_group 51 GroupID
+target_count 77 Int
+activate_group 56 Bool
+multi_activate 104 Bool
+
+$InstantCountComparison = { equals larger smaller }
+@InstantCountTrigger: Trigger
+item_id 80 ItemID
+target_group 51 GroupID
+target_count 77 Int
+activate_group 56 Bool
+comparison 88 InstantCountComparison
+
+$GradientBlend = { normal additive multiply invert }
+@GradientTrigger: Trigger
+blending 174 GradientBlend
+layer 202 TriggerLayer
+u_bl 203 Int
+d_br 204 Int
+l_tl 205 Int
+r_tr 206 Int
+vertex_mode 207 Bool
+disable 208 Bool
+gradient_id 209 Int
+preview_opacity 456 Float
+disable_all 508 Bool
+
+@StaticCameraTrigger: Trigger
+duration 10 Float
+target_group 71 Int
+follow 212 Bool
+follow_easing 213 Float
+smooth_velocity 453 Bool
+smooth_velocity_modifier 454 Float
+exit_instant 465 Bool
+exit_static 110 Bool
+
+@CameraZoomTrigger: Trigger
+time 10 Float
+zoom 371 Float
+
+@CameraRotateTrigger: Trigger
+move_time 10 Float
+degrees 68 Float
+add 70 Bool
+snap360 394 Bool
+
+$CameraEdge = { unset left right up down }
+@CameraEdgeTrigger: Trigger
+edge 164 CameraEdge
+target_group 51 GroupID
+
+@CameraModeTrigger: Trigger
+free_mode 111 Bool
+edit_camera_settings 112 Bool
+easing 113 int
+padding 114 Float
+disable_gridsnap 370 Bool
+
+@CameraGuide: Object
+zoom 371 Float
+offset_x 28 Int
+offset_y 29 Int
+preview_opacity 506 Float
+
+@CameraOffsetTrigger: Trigger
+move_time 10 Float
+offset_x 28 Int
+offset_y 29 Int
+xy_only 101 XYOnly
+
+@SongTrigger: Trigger
+volume 406 Float
+speed 404 Int
+channel 432 Int
+loop 413 Bool
+start 408 Int
+fade_in 409 Int
+end 410 Int
+fade_out 411 Int
+prep 399 Bool
+load_prep 400 Bool
+song 392 Int
+dont_reset 595 Bool
+
+$ReverbType = {
+    generic
+    padded_cell
+    room
+    bathroom
+    living_room
+    stone_room
+    auditorium
+    concert_hall
+    cave
+    arena
+    hangar
+    carpeted_hallway
+    hallway
+    stone_corridor
+    alley
+    forest
+    city
+    mountains
+    quarry
+    plain
+    parking_lot
+    sewer_pipe
+    underwater
+}
+@SFXTrigger: Trigger
+sfx_id 392 Int
+sound_duration 490 Float # affected by changing sfx, speed, start/end
+speed 404 Int
+pitch 405 Int
+volume 406 Float
+reverb 407 Bool
+reverb_type 502 ReverbType
+reverb_enable 503 Bool
+fft 412 Bool
+loop 413 Bool
+pre_load 433 Bool
+start 408 Int
+end 410 Int
+fade_in 409 Int
+fade_out 411 Int
+unique_id 416 UniqueID
+sfx_group 455 SFXGroup
+is_unique 415 Bool
+override 420 Bool
+min_interval 434 Float
+ignore_volume_test 489 Bool
+group_id_1 51 Int
+group_id_2 71 Int
+p1 138 Bool
+p2 200 Bool
+cam 428 Bool
+vol_near 421 Float
+vol_med 422 Float
+vol_far 423 Float
+min_dist 424 Int
+dist_2 425 Int
+dist_3 426 Int
+dir_buttons 458 SoundDirs
+speed_pm 596 Int
+pitch_pm 597 Int
+volume_pm 598 Int
+pitch_steps 599 Bool
+
+$PickupMultiplyDivide = { unset multiply divide }
+@PickupTrigger: Trigger
+item_id 80 ItemID
+count 77 Int
+override 139 Bool
+multiply_divide 88 PickupMultiplyDivide
+modifier 449 Float
+
+@TimeTrigger: Trigger
+start_time 467 Float
+stop_time 473 Float
+stop_checked 474 Bool
+item_id 80 TimerID
+target_id 51 GroupID
+time_mod 470 Float
+ignore_timewarp 469 Bool
+start_paused 471 Bool
+dont_override 468 Bool
+
+@TimeEventTrigger: Trigger
+item_id 80 TimerID
+target_id 51 GroupID
+target_time 473 Float
+multi_activate 475 Bool
+
+@TimeControlTrigger: Trigger
+item_id 80 Int
+start_stop 472 Bool
+
+$ItemTriggerTyp = { unset item timer points time att }
+$ItemTriggerOp = { eq add sub mult div }
+$ItemTriggerAbsNeg = { none abs neg }
+$ItemTriggerRounding = { none round floor ceil }
+$ItemTriggerCompareOp = { eq gt gte lt lte }
+
+@ItemEditTrigger: Trigger
+item_id_1 80 ItemOrTimerID
+item_id_2 95 ItemOrTimerID
+target_item_id 51 ItemOrTimerID
+typ_1 476 ItemTriggerTyp
+typ_2 477 ItemTriggerTyp
+target_typ 478 ItemTriggerTyp
+mod 479 Float
+assign_op 480 ItemTriggerOp
+op_1 481 ItemTriggerOp
+op_2 482 ItemTriggerOp
+abs_neg_1 578 ItemTriggerAbsNeg
+abs_neg_2 579 ItemTriggerAbsNeg
+rounding_1 485 ItemTriggerRounding
+rounding_2 486 ItemTriggerRounding
+
+@ItemCompareTrigger: Trigger
+item_id_1 80 ItemOrTimerID
+item_id_2 95 ItemOrTimerID
+typ_1 476 ItemTriggerTyp
+typ_2 477 ItemTriggerTyp
+mod_1 479 Float
+mod_2 483 Float
+true_id 51 GroupID
+false_id 71 GroupID
+tol_pm 484 Float
+op_1 480 ItemTriggerOp
+op_2 481 ItemTriggerOp
+compare_op 482 ItemTriggerCompareOp
+abs_neg_1 578 ItemTriggerAbsNeg
+abs_neg_2 579 ItemTriggerAbsNeg
+rounding_1 485 ItemTriggerRounding
+rounding_2 486 ItemTriggerRounding
+
+@ItemPersistenceTrigger: Trigger
+item_id 80 ItemOrTimerID
+timer 494 Bool
+persistent 491 Bool
+target_all 492 Bool
+reset 493 Bool
+
+@RandomTrigger: Trigger
+group_id_1 51 GroupID
+group_id_2 71 GroupID
+chance 10 Float
+
+@AdvancedRandomTrigger: Trigger
+list 152 AdvRandomList # example: 2.10.3.15 -> g2 weight 10, g3 weight 15
+
+$SequenceMode = { stop loop last }
+@SequenceTrigger: Trigger
+sequence 435 SequenceList
+mode 436 SequenceMode
+min_int 437 Float
+reset 438 Float
+reset_full_step 439 Bool
+unique_remap 505 Bool
+
+@SpawnParticleTrigger: Trigger
+particle_group 51 GroupID
+position_group 71 GroupID
+offset_x 547 Int
+offset_y 548 Int
+offvar_x 549 Int
+offvar_y 550 Int
+rotation 552 Int
+rotation_pm 553 Int
+scale 554 Float
+scale_pm 555 Float
+match_rot 551 Bool
+
+@ResetTrigger: Trigger
+group_id 51 Int
+
+$ArrowDir = { up = 1 down = 2 left = 3 right = 4 }
+@ArrowTrigger: Trigger
+edit_velocity 169 Bool
+velocity_mod_x 582 Float
+velocity_mod_y 583 Float
+override_velocity 584 Bool
+change_channel 171 Bool
+channel_only 172 Bool
+target_channel 173 ChannelID
+dont_slide 585 Bool
+instant_offset 368 Bool
+arrow_dir 167 ArrowDir
+gravity_dir 166 ArrowDir
+
+@EventTrigger: Trigger
+group_id 51 GroupID
+extra_id 447 Int
+extra_id_2 525 Int
+events 430 EventList
+
+@TimewarpTrigger: Trigger
+time_mod 120 Float
+
+$LabelAlign = { unset left right }
+$LabelSpecial = {
+    unset = 0
+    main_time = -1
+    points = -2
+    attempts = -3
+}
+@CounterLabel: Object
+item_id 80 ItemOrTimerID
+time_counter 466 Bool
+align 391 LabelAlign
+seconds_only 389 Bool
+special 390 LabelSpecial
+
+$UIRef = { auto center left right }
+@UITrigger: Trigger
+group_id 51 GroupID
+ui_target 71 GroupID
+xref_pos 385 UIRef
+yref_pos 386 UIRef
+xref_relative 387 Bool
+yref_relative 388 Bool
+
+@CollisionTrigger: Trigger
+block_a_id 80 BlockID
+block_b_id 95 BlockID
+target_id 51 GroupID
+activate_group 56 Bool
+trigger_on_exit 93 Bool
+p1 138 Bool
+p2 200 Bool
+pp 201 Bool
+
+@InstantCollisionTrigger: Trigger
+block_a_id 80 BlockID
+block_b_id 95 BlockID
+true_id 51 GroupID
+false_id 71 GroupID
+p1 138 Bool
+p2 200 Bool
+pp 201 Bool
+
+@CollisionStateBlock: Object
+state_on 51 GroupID
+state_off 71 GroupID
+
+@CollisionBlock: Object
+block_id 80 BlockID
+dynamic_block 94 Bool
+
+@ToggleBlock: Object
+group_id 51 GroupID
+activate_group 56 Bool
+claim_touch 445 Bool
+spawn_only 504 Bool
+
+$OptionSet = { unset = 0 on = 1 off = -1 }
+@OptionsTrigger: Trigger
+streak_additive 159 OptionSet
+hide_ground 161 OptionSet
+hide_mg 195 OptionSet
+hide_p1 162 OptionSet
+hide_p2 163 OptionSet
+disable_p1_controls 165 OptionSet
+disable_p2_controls 199 OptionSet
+unlink_dual_gravity 160 OptionSet
+hide_attempts 532 OptionSet
+audio_on_death 575 OptionSet
+no_death_sfx 576 OptionSet
+edit_respawn_time 573 OptionSet
+boost_slide 593 OptionSet
+respawn_time 574 Float
+
+@OnDeathTrigger: Trigger
+group_id 51 GroupID
+activate_group 56 Bool
+
+@GravityTrigger: Trigger
+gravity 148 Float
+p1 138 Bool
+p2 200 Bool
+pt 201 Bool
+
+@PlayerControlTrigger: Trigger
+p1 138 Bool
+p2 200 Bool
+stop_jump 540 Bool
+stop_move 541 Bool
+stop_rot 542 Bool
+stop_slide 543 Bool
+
+$TeleportGravity = { unset normal flipped toggle }
+@TeleportCommon
+target_group_id 51 GroupID
+smooth_ease 55 Bool
+static_force 345 Bool
+static_force_additive 443 Bool
+redirect_force 347 Bool
+redirect_force_min 348 Float
+redirect_force_max 349 Float
+redirect_force_mod 350 Float
+static_force_value 346 Float
+save_offset 351 Bool
+ignore_x 352 Bool
+ignore_y 353 Bool
+exit_gravity 354 TeleportGravity
+instant_camera 464 Bool
+snap_ground 510 Bool
+redirect_dash 591 Bool
+
+@TeleportTrigger: TeleportCommon Trigger
+@UnlinkedBlueTeleportal: TeleportCommon Object
+
+@ShaderTrigger: Trigger
+disable_all 192 Bool
+no_player_particles 188 Bool
+lowest_layer 196 TriggerLayer
+highest_layer 197 TriggerLayer
+
+@ShaderTriggerCommon: Trigger
+relative 514 Bool
+animate 513 Bool
+shader_disable 531 Bool
+
+@ShockwaveShaderTrigger: ShaderTriggerCommon
+speed 175 Float
+strength 176 Float
+thickness 180 Float
+wave_w 179 Float
+fade_in 181 Float
+fade_out 182 Float
+time_off 177 Float
+max_size 512 Float
+screen_offx 290 Float
+screen_offy 291 Float
+invert 184 Bool
+inner 183 Float
+outer 191 Float
+target 188 Bool
+center_id 51 GroupID
+p1 138 Bool
+p2 200 Bool
+follow 190 Bool
+
+@ShockLineShaderTrigger: ShaderTriggerCommon
+speed 175 Float
+strength 176 Float
+thickness 180 Float
+wave_w 179 Float
+fade_in 181 Float
+fade_out 182 Float
+time_off 177 Float
+max_size 512 Float
+screen_off 290 Float
+invert 184 Bool
+flip 185 Bool
+rotate 186 Bool
+dual 187 Bool
+target 188 Bool
+center_id 51 GroupID
+p1 138 Bool
+p2 200 Bool
+follow 190 Bool
+
+@GlitchShaderTrigger: ShaderTriggerCommon
+strength 176 Float
+speed 175 Float
+slice_height 179 Float
+max_slice_x_off 191 Float
+max_col_x_off 181 Float
+max_col_y_off 182 Float
+
+@ChromaticShaderTrigger: ShaderTriggerCommon
+target_x 180 Float
+target_y 189 Float
+use_x 188 Bool
+use_y 190 Bool
+
+@ChromaGlitchShaderTrigger: ShaderTriggerCommon
+speed 175 Float
+rgb_off 180 Float
+strength 176 Float
+line_thickness 179 Float
+segment_h 189 Float
+line_strength 191 Float
+disable 192 Bool
+relative_pos 194 Bool
+
+@PixelateShaderTrigger: ShaderTriggerCommon
+target_x 180 Float
+target_y 189 Float
+use_x 188 Bool
+use_y 190 Bool
+snap_grid 194 Bool
+hard_edges 515 Bool
+
+@LensCircleShaderTrigger: ShaderTriggerCommon
+size 179 Float
+fade 181 Float
+strength 176 Float
+screen_offx 290 Float
+screen_offy 291 Float
+center_id 51 GroupID
+p1 138 Bool
+p2 200 Bool
+tint_channel 71 ColorID
+
+@RadialBlurShaderTrigger: ShaderTriggerCommon
+size 179 Float
+intensity 176 Float
+ref_channel 71 Int
+screen_offx 290 Float
+screen_offy 291 Float
+fade 181 Float
+target 188 Bool
+center_id 51 GroupID
+p1 138 Bool
+p2 200 Bool
+empty_only 515 Bool
+
+@MotionBlurShaderTrigger: ShaderTriggerCommon
+target_x 180 Float
+target_y 189 Float
+ref_channel 71 Int
+fade 181 Float
+intensity 176 Float
+follow_ease 191 Float
+use_x 188 Bool
+use_y 190 Bool
+empty_only 515 Bool
+dual_dir 194 Bool
+target_id 51 GroupID
+p1 138 Bool
+p2 200 Bool
+c 201 Bool
+
+@BulgeShaderTrigger: ShaderTriggerCommon
+bulge 176 Float
+radius 180 Float
+screen_offx 290 Float
+screen_offy 291 Float
+target 188 Bool
+center_id 51 GroupID
+p1 138 Bool
+p2 200 Bool
+
+@PinchShaderTrigger: ShaderTriggerCommon
+target_x 180 Float
+target_y 189 Float
+screen_off_x 290 Float
+screen_off_y 291 Float
+radius 512 Float
+modifier 179 Float
+use_x 190 Bool
+use_y 194 Bool
+
+@GrayscaleShaderTrigger: ShaderTriggerCommon
+target 176 Float
+tint_channel 51 ColorID
+tint_channel_checkbox 190 Bool
+use_lum 188 Bool
+
+@SepiaShaderTrigger: ShaderTriggerCommon
+target 176 Float
+
+@InvertColorShaderTrigger: ShaderTriggerCommon
+target 176 Float
+r 179 Float
+g 180 Float
+b 189 Float
+edit_rgb 188 Bool
+tween_rgb 190 Bool
+clamp_rgb 194 Bool
+
+@HueShaderTrigger: ShaderTriggerCommon
+degrees 176 Float
+
+@EditColorShaderTrigger: ShaderTriggerCommon
+cr 176 Float
+cg 191 Float
+cb 175 Float
+br 179 Float
+bg 180 Float
+bb 189 Float
+
+$EnterExitOnly = { unset enter exit }
+@EnterEffectTrigger: Trigger
+enter_exit_only 217 EnterExitOnly
+target_enter_channel 344 Int
+
+@EditSongTrigger: Trigger
+channel 432 Int
+stop 417 Bool
+stop_loop 414 Bool
+speed 404 Int
+change_speed 419 Bool
+volume 406 Float
+change_volume 418 Bool
+group_id_1 51 GroupID
+group_id_2 71 GroupID
+p1 138 Bool
+p2 200 Bool
+cam 428 Bool
+vol_near 421 Float
+vol_med 422 Float
+vol_far 423 Float
+min_dist 424 Int
+dist_2 425 Int
+dist_3 426 Int
+dir_buttons 458 SoundDirs
+
+@EditSFXTrigger: Trigger
+group_id 457 GroupID
+sfx_group 455 SFXGroup
+unique_id 416 UniqueID
+stop 417 Bool
+stop_loop 414 Bool
+speed 404 Int
+change_speed 419 Bool
+volume 406 Float
+change_volume 418 Bool
+group_id_1 51 GroupID
+group_id_2 71 GroupID
+p1 138 Bool
+p2 200 Bool
+cam 428 Bool
+vol_near 421 Float
+vol_med 422 Float
+vol_far 423 Float
+min_dist 424 Int
+dist_2 425 Int
+dist_3 426 Int
+dir_buttons 458 SoundDirs
+
+@ForceBlock: Object
+relative 528 Bool
+force 149 Float
+min_force 526 Float
+max_force 527 Float
+range 529 Bool
+force_id 530 ForceID
+
+@EndTrigger: Trigger
+spawn_id 51 GroupID
+target_pos 71 GroupID
+no_effects 460 Bool
+instant 487 Bool
+no_sfx 461 Bool
+
+@SecretCoin: AnimatedObject
+coin_id 12 Int
+
+@OldEndTrigger: Trigger
+group_id 51 GroupID
+lock_y 59 Bool
+reversed 118 Bool
+
+@Tileset: Object
+reference_only 157 Bool
+
+@CheckpointTrigger: Trigger
+respawn_id 448 GroupID
+
+$BPMSpeed = { normal yellow green pink red }
+@BPMGuide: Object
+bpm 498 Int
+speed 499 BPMSpeed
+disable 500 Bool
+bpb 501 Int
+
+
+%Object
+1 Object
+2 Object
