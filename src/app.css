@@ -3,6 +3,7 @@
 * {
     /* color: white; */
     flex-shrink: 0;
+    scrollbar-color: white #0a0a0f;
 }
 body {
     font-family: "Gabarito";

@@ -4,7 +4,10 @@
 
     let { children } = $props();
 
-    const headerLinks = [["Object Props", "/props"]];
+    const headerLinks = [
+        ["Object Props", "/props"],
+        ["Particle Props", "/particles"],
+    ];
 </script>
 
 <svelte:head>

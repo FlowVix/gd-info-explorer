@@ -310,3 +310,36 @@ const parse = (txt: string): Schema => {
 
 console.log("bleeb");
 export const SCHEMA: Schema = parse(schema);
+
+export type FlatSchemaClass = {
+    fields: SchemaClassField[];
+};
+
+export type FlatSchema = {
+    types: Record<string, SchemaType>;
+    classes: Record<string, FlatSchemaClass>;
+    defaultClass: string;
+    idClasses: Record<number, string>;
+};
+
+const flatFields = (cls: SchemaClass): SchemaClassField[] => {
+    let out = [];
+    for (let i of cls.inherits) {
+        out.push(...flatFields(SCHEMA.classes[i]));
+    }
+    out.push(...cls.fields);
+    return out;
+};
+let flatClasses: Record<string, FlatSchemaClass> = {};
+for (let [name, cls] of Object.entries(SCHEMA.classes)) {
+    flatClasses[name] = {
+        fields: flatFields(cls),
+    };
+}
+
+export const FLATTENED_SCHEMA: FlatSchema = {
+    types: SCHEMA.types,
+    defaultClass: SCHEMA.defaultClass,
+    idClasses: SCHEMA.idClasses,
+    classes: flatClasses,
+};
