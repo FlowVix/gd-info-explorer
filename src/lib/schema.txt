@@ -488,7 +488,7 @@ area_easing2 248 Easing
 area_easing2_rate 249 Float
 dir_buttons_dir 262 AreaDirButtonsDir
 dir_buttons_inwards 276 Bool
-dir_buttons_single_arrow 283 Bool # seems to be true when dir_buttons_dir is all
+dir_buttons_double_arrow 283 Bool
 de_ap 539 Bool
 effect_id 225 EffectID
 target_group 51 GroupID
