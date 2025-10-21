@@ -7,6 +7,7 @@
 
     const headerLinks = [
         ["Object Props", resolve("/props")],
+        ["Object IDs", resolve("/ids")],
         ["Particle Props", resolve("/particles")],
     ];
 </script>
