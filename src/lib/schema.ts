@@ -308,7 +308,6 @@ const parse = (txt: string): Schema => {
 
 // }
 
-console.log("bleeb");
 export const SCHEMA: Schema = parse(schema);
 
 export type FlatSchemaClass = {
@@ -332,8 +331,15 @@ const flatFields = (cls: SchemaClass): SchemaClassField[] => {
 };
 let flatClasses: Record<string, FlatSchemaClass> = {};
 for (let [name, cls] of Object.entries(SCHEMA.classes)) {
+    let fields = flatFields(cls);
+
+    for (let i of fields) {
+        if (fields.filter(f => f.name == i.name).length > 1) {
+            throw `duplicate field ${i.name} in flattened class ${name}`;
+        }
+    }
     flatClasses[name] = {
-        fields: flatFields(cls),
+        fields: fields,
     };
 }
 

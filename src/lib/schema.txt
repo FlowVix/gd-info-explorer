@@ -321,8 +321,8 @@ max_y_id 519 GroupID
 
 @ScaleTrigger: Trigger
 duration 10 Float
-scale_x 150 Float
-scale_y 151 Float
+scale_trigger_scale_x 150 Float
+scale_trigger_scale_y 151 Float
 div_x 153 Bool
 div_y 154 Bool
 target_group 51 GroupID
@@ -389,8 +389,8 @@ max_speed_pm 299 Float
 max_range 308 Int
 max_range_pm 309 Int
 max_range_unmarked 366 Int
-easing 361 Float
-easing_pm 362 Float
+follow_easing 361 Float
+follow_easing_pm 362 Float
 start_speed 300 Float
 start_speed_pm 301 Float
 start_speed_unmarked 560 Int
@@ -480,12 +480,12 @@ offset_y_pm 253 Int
 mod_front 263 Float
 mod_back 264 Float
 deadzone 282 Float
-easing 242 Easing
-easing_rate 243 Float
+area_easing 242 Easing
+area_easing_rate 243 Float
 @AreaTrigger: AreaEditAreaTriggerCommon Trigger
 ease_out 261 Bool
-easing2 248 Easing
-easing2_rate 249 Float
+area_easing2 248 Easing
+area_easing2_rate 249 Float
 dir_buttons_dir 262 AreaDirButtonsDir
 dir_buttons_inwards 276 Bool
 dir_buttons_single_arrow 283 Bool # seems to be true when dir_buttons_dir is all
@@ -517,16 +517,16 @@ relative 287 Bool
 @EditAreaMoveTrigger: AreaMoveTriggerCommon EditAreaTrigger
 
 @AreaRotateTriggerCommon
-rotation 270 Float
-rotation_pm 271 Float
+area_rotation 270 Float
+area_rotation_pm 271 Float
 @AreaRotateTrigger: AreaRotateTriggerCommon AreaTrigger
 @EditAreaRotateTrigger: AreaRotateTriggerCommon EditAreaTrigger
 
 @AreaScaleTriggerCommon
-scale_x 233 Float
-scale_x_pm 234 Float
-scale_y 235 Float
-scale_y_pm 236 Float
+area_scale_x 233 Float
+area_scale_x_pm 234 Float
+area_scale_y 235 Float
+area_scale_y_pm 236 Float
 @AreaScaleTrigger: AreaScaleTriggerCommon AreaTrigger
 @EditAreaScaleTrigger: AreaScaleTriggerCommon EditAreaTrigger
 
@@ -715,7 +715,7 @@ target_group 51 GroupID
 @CameraModeTrigger: Trigger
 free_mode 111 Bool
 edit_camera_settings 112 Bool
-easing 113 int
+camera_easing 113 int
 padding 114 Float
 disable_gridsnap 370 Bool
 
@@ -734,7 +734,7 @@ xy_only 101 XYOnly
 @SongTrigger: Trigger
 volume 406 Float
 speed 404 Int
-channel 432 Int
+song_channel 432 Int
 loop 413 Bool
 start 408 Int
 fade_in 409 Int
@@ -909,10 +909,10 @@ offset_x 547 Int
 offset_y 548 Int
 offvar_x 549 Int
 offvar_y 550 Int
-rotation 552 Int
-rotation_pm 553 Int
-scale 554 Float
-scale_pm 555 Float
+particle_rotation 552 Int
+particle_rotation_pm 553 Int
+particle_scale 554 Float
+particle_scale_pm 555 Float
 match_rot 551 Bool
 
 @ResetTrigger: Trigger
@@ -1232,7 +1232,7 @@ enter_exit_only 217 EnterExitOnly
 target_enter_channel 344 Int
 
 @EditSongTrigger: Trigger
-channel 432 Int
+song_channel 432 Int
 stop 417 Bool
 stop_loop 414 Bool
 speed 404 Int
@@ -1286,7 +1286,7 @@ force_id 530 ForceID
 @EndTrigger: Trigger
 spawn_id 51 GroupID
 target_pos 71 GroupID
-no_effects 460 Bool
+no_end_effects 460 Bool
 instant 487 Bool
 no_sfx 461 Bool
 
