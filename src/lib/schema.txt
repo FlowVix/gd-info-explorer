@@ -3,6 +3,7 @@
 $Int # integer
 $Float # decimal floating-point
 $Bool # boolean
+$String # text
 $HSVString # string of the format `<h>a<s>a<b>a<s_checked>a<b_checked>` where <...> are values
 $GroupList # period separated group list
 $ParticleString # list separated by `a`, check above for properties in order

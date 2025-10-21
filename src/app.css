@@ -1,1 +1,12 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+* {
+    /* color: white; */
+    flex-shrink: 0;
+}
+body {
+    font-family: "Gabarito";
+    color: white;
+    background: #0a0a0f;
+    overflow: hidden;
+}

@@ -308,4 +308,5 @@ const parse = (txt: string): Schema => {
 
 // }
 
+console.log("bleeb");
 export const SCHEMA: Schema = parse(schema);
