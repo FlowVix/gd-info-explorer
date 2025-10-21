@@ -1,12 +1,13 @@
 <script lang="ts">
     import "../app.css";
     import favicon from "$lib/assets/icon.png";
+    import { resolve } from "$app/paths";
 
     let { children } = $props();
 
     const headerLinks = [
-        ["Object Props", "/props"],
-        ["Particle Props", "/particles"],
+        ["Object Props", resolve("/props")],
+        ["Particle Props", resolve("/particles")],
     ];
 </script>
 
@@ -18,8 +19,9 @@
     <div
         class="bg-[#1E1E2D] rounded-lg w-full h-16 flex items-center pl-4 gap-4"
     >
-        <a class="text-4xl font-bold mr-4 hover:text-[#7FFFFF]" href="/"
-            >GD Info Explorer</a
+        <a
+            class="text-4xl font-bold mr-4 hover:text-[#7FFFFF]"
+            href={resolve("/")}>GD Info Explorer</a
         >
         {#each headerLinks as link}
             <a
