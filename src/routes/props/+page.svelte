@@ -83,7 +83,7 @@
                     >(structured divisions of properties I made up)</span
                 >
             </div>
-            <div class="flex gap-2">
+            <div class="flex gap-2 items-center">
                 <input
                     type="text"
                     class="bg-[#0A0A0F] p-2 rounded-md w-[300px] placeholder:text-[#505078]"
@@ -102,6 +102,10 @@
                         propSearch = "";
                     }}
                 />
+                <span class="text-[#9696E1]"
+                    >Property 1 is Object ID and corresponds to one of these
+                    classes</span
+                >
             </div>
             <div
                 class="w-full bg-[#1E1E2D] px-2 py-1 rounded-md flex flex-col overflow-y-scroll"
