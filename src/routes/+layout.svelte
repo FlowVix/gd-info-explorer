@@ -5,8 +5,8 @@
     let { children } = $props();
 
     const headerLinks = [
-        ["Object Props", "/gd-info-explorer/props"],
-        ["Particle Props", "/gd-info-explorer/particles"],
+        ["Object Props", "/props"],
+        ["Particle Props", "/particles"],
     ];
 </script>
 
@@ -18,9 +18,8 @@
     <div
         class="bg-[#1E1E2D] rounded-lg w-full h-16 flex items-center pl-4 gap-4"
     >
-        <a
-            class="text-4xl font-bold mr-4 hover:text-[#7FFFFF]"
-            href="/gd-info-explorer/">GD Info Explorer</a
+        <a class="text-4xl font-bold mr-4 hover:text-[#7FFFFF]" href="/"
+            >GD Info Explorer</a
         >
         {#each headerLinks as link}
             <a
