@@ -10,7 +10,7 @@ $ParticleString # list separated by `a`, check above for properties in order
 $RemapList # period separated (group, group) list
 $AdvRandomList # period separated (group, weight) list
 $SequenceList # period separated (group, count) list
-$EventList # period separated integer group list
+$EventList # period separated integer list
 
 $GroupID = Int
 $ColorID = Int
@@ -715,7 +715,7 @@ target_group 51 GroupID
 @CameraModeTrigger: Trigger
 free_mode 111 Bool
 edit_camera_settings 112 Bool
-camera_easing 113 int
+camera_easing 113 Int
 padding 114 Float
 disable_gridsnap 370 Bool
 
