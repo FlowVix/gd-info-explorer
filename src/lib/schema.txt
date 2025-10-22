@@ -715,7 +715,7 @@ target_group 51 GroupID
 @CameraModeTrigger: Trigger
 free_mode 111 Bool
 edit_camera_settings 112 Bool
-camera_easing 113 int
+camera_easing 113 Int
 padding 114 Float
 disable_gridsnap 370 Bool
 
