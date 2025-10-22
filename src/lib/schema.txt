@@ -1312,7 +1312,7 @@ disable 500 Bool
 bpb 501 Int
 
 
-%Object
+%Common
 2895 Template
 2896 Template
 2897 Template
