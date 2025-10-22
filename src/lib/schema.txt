@@ -10,7 +10,7 @@ $ParticleString # list separated by `a`, check above for properties in order
 $RemapList # period separated (group, group) list
 $AdvRandomList # period separated (group, weight) list
 $SequenceList # period separated (group, count) list
-$EventList # period separated integer group list
+$EventList # period separated integer list
 
 $GroupID = Int
 $ColorID = Int
