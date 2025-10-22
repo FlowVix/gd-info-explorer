@@ -72,7 +72,7 @@ $TriggerLayer = {
 }
 $SoundDirs = { all left_right left right up_down down up }
 
-@Object
+@Common
 x 2 Float
 y 3 Float
 flip_horiz 4 Bool
@@ -139,14 +139,14 @@ orange_tp_portal_distance 54 Float
 multi_activate_classic 99 Bool
 no_multi_activate_platformer 444 Bool
 
-@DashOrb: Object
+@DashOrb: Common
 speed 586 Float
 end_boost 588 Float
 max_duration 590 Float
 allow_collide 587 Bool
 stop_slide 589 Bool
 
-@CustomParticles: Object
+@CustomParticles: Common
 particle_data 145 ParticleString
 use_obj_color 146 Bool
 uniform_obj_color 147 Bool
@@ -154,11 +154,11 @@ animate_on_trigger 123 Bool
 animate_active_only 214 Bool
 quick_start 211 Bool
 
-@TextObject: Object
+@TextObject: Common
 text 31 String
 kerning 488 Int
 
-@Collectible: Object
+@Collectible: Common
 particle 440 Int
 points 383 Int
 toggle_trigger 382 Bool
@@ -169,11 +169,11 @@ item_id 80 ItemID
 sub_count 78 Bool
 no_anim 463 Bool
 
-@RotatingObject: Object
+@RotatingObject: Common
 rotation_speed 97 Int
 disable_rotation 98 Bool
 
-@AnimatedObject: Object
+@AnimatedObject: Common
 randomize_start 106 Bool
 disable_delayed_loop 126 Bool
 use_speed 122 Bool
@@ -187,7 +187,7 @@ offset_anim 592 Bool
 $KeyframeRotDir = { unset cw ccw }
 $KeyframeMode = { time even dist }
 
-@KeyframeObject: Object
+@KeyframeObject: Common
 group_id 51 GroupID
 x360 537 Int
 spawn_gid 71 GroupID
@@ -204,7 +204,7 @@ anim_id 373 Int
 order_index 374 Int
 line_opacity 524 Float
 
-@Trigger: Object
+@Trigger: Common
 spawn_triggered 62 Bool
 touch_triggered 11 Bool
 multi_triggered 87 Bool
@@ -719,7 +719,7 @@ camera_easing 113 int
 padding 114 Float
 disable_gridsnap 370 Bool
 
-@CameraGuide: Object
+@CameraGuide: Common
 zoom 371 Float
 offset_x 28 Int
 offset_y 29 Int
@@ -948,7 +948,7 @@ $LabelSpecial = {
     points = -2
     attempts = -3
 }
-@CounterLabel: Object
+@CounterLabel: Common
 item_id 80 ItemOrTimerID
 time_counter 466 Bool
 align 391 LabelAlign
@@ -983,15 +983,15 @@ p1 138 Bool
 p2 200 Bool
 pp 201 Bool
 
-@CollisionStateBlock: Object
+@CollisionStateBlock: Common
 state_on 51 GroupID
 state_off 71 GroupID
 
-@CollisionBlock: Object
+@CollisionBlock: Common
 block_id 80 BlockID
 dynamic_block 94 Bool
 
-@ToggleBlock: Object
+@ToggleBlock: Common
 group_id 51 GroupID
 activate_group 56 Bool
 claim_touch 445 Bool
@@ -1051,8 +1051,8 @@ instant_camera 464 Bool
 snap_ground 510 Bool
 redirect_dash 591 Bool
 @TeleportTrigger: TeleportCommon Trigger
-@BlueTeleportal: TeleportCommon Object
-@TeleportOrb: TeleportCommon Object
+@BlueTeleportal: TeleportCommon Common
+@TeleportOrb: TeleportCommon Common
 
 @ShaderTrigger: Trigger
 disable_all 192 Bool
@@ -1275,7 +1275,7 @@ dist_2 425 Int
 dist_3 426 Int
 dir_buttons 458 SoundDirs
 
-@ForceBlock: Object
+@ForceBlock: Common
 relative 528 Bool
 force 149 Float
 min_force 526 Float
@@ -1298,14 +1298,14 @@ group_id 51 GroupID
 lock_y 59 Bool
 reversed 118 Bool
 
-@Template: Object
+@Template: Common
 reference_only 157 Bool
 
 @CheckpointTrigger: Trigger
 respawn_id 448 GroupID
 
 $BPMSpeed = { normal yellow green pink red }
-@BPMGuide: Object
+@BPMGuide: Common
 bpm 498 Int
 speed 499 BPMSpeed
 disable 500 Bool
