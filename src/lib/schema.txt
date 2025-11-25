@@ -188,6 +188,7 @@ $KeyframeRotDir = { unset cw ccw }
 $KeyframeMode = { time even dist }
 
 @KeyframeObject: Common
+duration 10 Float
 group_id 51 GroupID
 x360 537 Int
 spawn_gid 71 GroupID
