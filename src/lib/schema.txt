@@ -107,7 +107,7 @@ linked_group 108 Int # the id of the editor link group this object is in (link c
 interactible 36 Bool
 
 dont_fade 64 Bool
-dont_enter 57 Bool
+dont_enter 67 Bool
 no_effects 116 Bool
 group_parent 34 Bool
 area_parent 279 Bool
