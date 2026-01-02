@@ -233,6 +233,18 @@ copy_opacity 60 Bool
 duration 10 Float
 tint_ground 14 Bool
 
+@BackgroundSpeedTrigger: Trigger
+mod_x 143 Float
+mod_y 144 Float
+
+@MiddleGroundSpeedTrigger: Trigger
+mod_x 143 Float
+mod_y 144 Float
+
+@EditMiddleGroundTrigger: Trigger
+duration 10 Float
+offset 29 Int
+
 @MoveTrigger: Trigger
 duration 10 Float
 target_group 51 GroupID
