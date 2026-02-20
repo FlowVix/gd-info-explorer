@@ -819,7 +819,7 @@ dist_3 426 Int
 dir_buttons 458 SoundDirs
 speed_pm 596 Int
 pitch_pm 597 Int
-volume_pm 598 Int
+volume_pm 598 Float
 pitch_steps 599 Bool
 
 $PickupMultiplyDivide = { unset multiply divide }
