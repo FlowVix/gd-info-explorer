@@ -968,7 +968,7 @@ align 391 LabelAlign
 seconds_only 389 Bool
 special 390 LabelSpecial
 
-$UIRef = { auto center left right }
+$UIRef = { default auto_x center_x left right auto_y center_y bottom top }
 @UITrigger: Trigger
 group_id 51 GroupID
 ui_target 71 GroupID
