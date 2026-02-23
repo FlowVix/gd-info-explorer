@@ -170,7 +170,7 @@ sub_count 78 Bool
 no_anim 463 Bool
 
 @RotatingObject: Common
-rotation_speed 97 Int
+rotation_speed 97 Float
 disable_rotation 98 Bool
 
 @AnimatedObject: Common
@@ -819,7 +819,7 @@ dist_3 426 Int
 dir_buttons 458 SoundDirs
 speed_pm 596 Int
 pitch_pm 597 Int
-volume_pm 598 Int
+volume_pm 598 Float
 pitch_steps 599 Bool
 
 $PickupMultiplyDivide = { unset multiply divide }
@@ -918,12 +918,12 @@ unique_remap 505 Bool
 @SpawnParticleTrigger: Trigger
 particle_group 51 GroupID
 position_group 71 GroupID
-offset_x 547 Int
-offset_y 548 Int
-offvar_x 549 Int
-offvar_y 550 Int
-particle_rotation 552 Int
-particle_rotation_pm 553 Int
+offset_x 547 Float
+offset_y 548 Float
+offvar_x 549 Float
+offvar_y 550 Float
+particle_rotation 552 Float
+particle_rotation_pm 553 Float
 particle_scale 554 Float
 particle_scale_pm 555 Float
 match_rot 551 Bool
@@ -968,7 +968,7 @@ align 391 LabelAlign
 seconds_only 389 Bool
 special 390 LabelSpecial
 
-$UIRef = { auto center left right }
+$UIRef = { default auto_x center_x left right auto_y center_y bottom top }
 @UITrigger: Trigger
 group_id 51 GroupID
 ui_target 71 GroupID
