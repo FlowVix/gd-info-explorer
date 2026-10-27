@@ -1317,6 +1317,13 @@ reference_only 157 Bool
 @CheckpointTrigger: Trigger
 respawn_id 448 GroupID
 
+@PercentTrigger: Trigger
+target_item_id 80 ItemID
+item_id 95 ItemID
+percent 602 Int
+add 603 Bool
+input 605 Bool
+
 $BPMSpeed = { normal yellow green pink red }
 @BPMGuide: Common
 bpm 498 Int
@@ -1808,3 +1815,4 @@ bpb 501 Int
 3020 Trigger
 3021 Trigger
 3023 Trigger
+3663 PercentTrigger
