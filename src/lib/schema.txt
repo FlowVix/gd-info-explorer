@@ -248,8 +248,8 @@ offset 29 Int
 @MoveTrigger: Trigger
 duration 10 Float
 target_group 51 GroupID
-move_x 28 Int
-move_y 29 Int
+move_x 28 Float
+move_y 29 Float
 lock_x_player 58 Bool
 lock_y_player 59 Bool
 mod_x 143 Float
@@ -263,7 +263,7 @@ mode_target_p1 138 Bool
 mode_target_p2 200 Bool
 mode_xy_only 101 XYOnly
 direction_mode 394 Bool
-direction_mode_distance 396 Int
+direction_mode_distance 396 Float
 silent 544 Bool
 dynamic_mode 397 Bool
 small_step 393 Bool
@@ -734,14 +734,14 @@ disable_gridsnap 370 Bool
 
 @CameraGuide: Common
 zoom 371 Float
-offset_x 28 Int
-offset_y 29 Int
+offset_x 28 Float
+offset_y 29 Float
 preview_opacity 506 Float
 
 @CameraOffsetTrigger: Trigger
 move_time 10 Float
-offset_x 28 Int
-offset_y 29 Int
+offset_x 28 Float
+offset_y 29 Float
 xy_only 101 XYOnly
 
 @SongTrigger: Trigger
